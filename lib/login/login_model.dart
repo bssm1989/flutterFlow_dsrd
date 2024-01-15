@@ -15,8 +15,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FocusNode? passwordFocusNode;
   TextEditingController? passwordController;
   String? Function(BuildContext, String?)? passwordControllerValidator;
-  // Stores action output result for [Backend Call - API (log in)] action in Button-Login widget.
-  ApiCallResponse? apiResultwwv;
+  // Stores action output result for [Backend Call - API (log in Php)] action in Button-Login widget.
+  ApiCallResponse? loginApiResponse;
+  // Stores action output result for [Backend Call - API (constReg)] action in Button-Login widget.
+  ApiCallResponse? constRegApi;
 
   /// Initialization and disposal methods.
 

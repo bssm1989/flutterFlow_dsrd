@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,7 +19,13 @@ void main() async {
 
   await FlutterFlowTheme.initialize();
 
-  runApp(const MyApp());
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -132,8 +139,8 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': const HomeWidget(),
       'Main_customerList': const MainCustomerListWidget(),
       'Main_Contracts': const MainContractsWidget(),
-      'myTeam': const MyTeamWidget(),
       'Main_profilePage': const MainProfilePageWidget(),
+      'myTeam': const MyTeamWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -202,20 +209,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             BottomNavigationBarItem(
               icon: const Icon(
-                Icons.stream,
-                size: 24.0,
-              ),
-              activeIcon: const Icon(
-                Icons.stream,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'smtxdnbn' /* __ */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(
                 Icons.account_circle_outlined,
                 size: 24.0,
               ),
@@ -225,6 +218,20 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 'o3dp9tss' /* __ */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.stream,
+                size: 24.0,
+              ),
+              activeIcon: const Icon(
+                Icons.stream,
+                size: 24.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                'smtxdnbn' /* __ */,
               ),
               tooltip: '',
             )

@@ -8,6 +8,7 @@ import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'edit_profile_photo_model.dart';
 export 'edit_profile_photo_model.dart';
 
@@ -44,6 +45,8 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
       height: 350.0,

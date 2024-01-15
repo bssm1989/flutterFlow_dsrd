@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'main_customer_list_model.dart';
 export 'main_customer_list_model.dart';
 
@@ -254,7 +255,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 3,
+      length: 5,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
     setupAnimations(
@@ -284,6 +285,8 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -389,7 +392,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                       16.0, 16.0, 0.0, 0.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'n99lg1qh' /* Customers */,
+                                      'n99lg1qh' /* กลุ่มเปราะบาง */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall,
@@ -469,25 +472,39 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                         Tab(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'lvnskphp' /* All */,
+                                            'lvnskphp' /* ทั้งหมด */,
                                           ),
                                         ),
                                         Tab(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            'qh2ock0d' /* Active */,
+                                            'qh2ock0d' /* ผู้สูงอายุ */,
                                           ),
                                         ),
                                         Tab(
                                           text: FFLocalizations.of(context)
                                               .getText(
-                                            's7xebw09' /* Cold Calls */,
+                                            's7xebw09' /* คนพิการ */,
+                                          ),
+                                        ),
+                                        Tab(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'qbof0y3o' /* เด็กกำพร้า/เด็กด้อยโอกาส */,
+                                          ),
+                                        ),
+                                        Tab(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '2dhwatij' /* หญิงหม้าย */,
                                           ),
                                         ),
                                       ],
                                       controller: _model.tabBarController,
                                       onTap: (i) async {
                                         [
+                                          () async {},
+                                          () async {},
                                           () async {},
                                           () async {},
                                           () async {}
@@ -635,7 +652,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                       FFLocalizations.of(
                                                                               context)
                                                                           .getText(
-                                                                        'riw99ssl' /* ACME Co. */,
+                                                                        'riw99ssl' /* คนพิการ */,
                                                                       ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
@@ -777,7 +794,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'gzwu4cjr' /* ACME Co. */,
+                                                                      'gzwu4cjr' /* ผู้สูงอายุ */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -918,7 +935,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'r658c9dm' /* Robin HQ */,
+                                                                      'r658c9dm' /* ผู้สูงอายุ */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1641,7 +1658,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'rv0grt5f' /* HealthAi */,
+                                                                      'rv0grt5f' /* ผู้สูงอายุ */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1764,7 +1781,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      '13p4ybb4' /* Account Manager */,
+                                                                      '13p4ybb4' /* ผู้สูงอายุ */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -1782,7 +1799,7 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                                                     FFLocalizations.of(
                                                                             context)
                                                                         .getText(
-                                                                      'y7tux8cs' /* HealthAi */,
+                                                                      'y7tux8cs' /* ผู้สูงอายุ */,
                                                                     ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
@@ -2119,6 +2136,44 @@ class _MainCustomerListWidgetState extends State<MainCustomerListWidget>
                                               ],
                                             ),
                                           ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'atd3lpf8' /* Tab View 4 */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                fontSize: 32.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'ig2mwif8' /* Tab View 5 */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                fontSize: 32.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
                                         ),
                                       ],
                                     ),

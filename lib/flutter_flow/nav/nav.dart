@@ -117,13 +117,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MainContractsWidget(),
             ),
             FFRoute(
-              name: 'myTeam',
-              path: 'myTeam',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'myTeam')
-                  : const MyTeamWidget(),
-            ),
-            FFRoute(
               name: 'Main_profilePage',
               path: 'mainProfilePage',
               builder: (context, params) => params.isEmpty
@@ -131,9 +124,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MainProfilePageWidget(),
             ),
             FFRoute(
-              name: 'userDetails',
-              path: 'userDetails',
-              builder: (context, params) => const UserDetailsWidget(),
+              name: 'myTeam',
+              path: 'myTeam',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'myTeam')
+                  : const MyTeamWidget(),
             ),
             FFRoute(
               name: 'editProfile',
@@ -141,9 +136,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const EditProfileWidget(),
             ),
             FFRoute(
-              name: 'projectDetailsHealthAi',
-              path: 'projectDetailsHealthAi',
-              builder: (context, params) => const ProjectDetailsHealthAiWidget(),
+              name: 'userDetails',
+              path: 'userDetails',
+              builder: (context, params) => const UserDetailsWidget(),
             ),
             FFRoute(
               name: 'projectDetails',
@@ -151,9 +146,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const ProjectDetailsWidget(),
             ),
             FFRoute(
+              name: 'projectDetailsHealthAi',
+              path: 'projectDetailsHealthAi',
+              builder: (context, params) => const ProjectDetailsHealthAiWidget(),
+            ),
+            FFRoute(
               name: 'searchPage',
               path: 'searchPage',
               builder: (context, params) => const SearchPageWidget(),
+            ),
+            FFRoute(
+              name: 'offlinedata',
+              path: 'offlinedata',
+              builder: (context, params) => const OfflinedataWidget(),
+            ),
+            FFRoute(
+              name: 'user',
+              path: 'user',
+              builder: (context, params) => const UserWidget(),
+            ),
+            FFRoute(
+              name: 'userEditDetail',
+              path: 'userEditDetail',
+              builder: (context, params) => const UserEditDetailWidget(),
+            ),
+            FFRoute(
+              name: 'Evaluation-Form',
+              path: 'evaluationForm',
+              builder: (context, params) => const EvaluationFormWidget(),
+            ),
+            FFRoute(
+              name: 'userEditDetailCopy',
+              path: 'userEditDetailCopy',
+              builder: (context, params) => UserEditDetailCopyWidget(
+                pid: params.getParam('pid', ParamType.String),
+                name: params.getParam('name', ParamType.String),
+                lastname: params.getParam('lastname', ParamType.String),
+                birthDate: params.getParam('birthDate', ParamType.String),
+                perid: params.getParam('perid', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Evaluation-Form2Copy',
+              path: 'evaluationForm2Copy',
+              builder: (context, params) => EvaluationForm2CopyWidget(
+                personId: params.getParam('personId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Signup',
+              path: 'Signup',
+              builder: (context, params) => const SignupWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -338,8 +381,8 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/splash_app_CRM_alt@2x.png',
-                    fit: BoxFit.cover,
+                    'assets/images/9vf9y_.jpg',
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : page;

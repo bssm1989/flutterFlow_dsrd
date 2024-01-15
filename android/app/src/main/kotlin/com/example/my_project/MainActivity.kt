@@ -1,4 +1,4 @@
-package com.mycompany.crmapp
+package com.dsrd.pattani
 
 import io.flutter.embedding.android.FlutterActivity
 

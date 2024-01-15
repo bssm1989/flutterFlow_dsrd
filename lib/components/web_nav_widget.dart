@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'web_nav_model.dart';
 export 'web_nav_model.dart';
 
@@ -72,6 +73,8 @@ class _WebNavWidgetState extends State<WebNavWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 1.0, 0.0),
       child: Container(
@@ -101,13 +104,17 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    if (Theme.of(context).brightness == Brightness.light)
-                      Image.asset(
-                        'assets/images/logo_newforceLight_alt@3x.png',
-                        width: 170.0,
-                        height: 60.0,
-                        fit: BoxFit.fitWidth,
+                    Flexible(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/yapuj_.png',
+                          width: 300.0,
+                          height: 40.0,
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
                     if (Theme.of(context).brightness == Brightness.dark)
                       Image.asset(
                         'assets/images/logo_newforceDark_alt@3x.png',
@@ -209,7 +216,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'yg07zi4c' /* Dashboard */,
+                                'yg07zi4c' /* แดชบอร์ด */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -267,7 +274,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '5s0d776i' /* My Team */,
+                                '5s0d776i' /* ทีมงาน */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -325,7 +332,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'lbojdpxg' /* Customers */,
+                                'lbojdpxg' /* กลุ่มเปราะบาง */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -441,7 +448,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '01nu9cy0' /* Profile */,
+                                '01nu9cy0' /* ข้อมูลผู้ใช้ */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall

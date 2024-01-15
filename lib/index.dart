@@ -6,12 +6,22 @@ export '/home/home_widget.dart' show HomeWidget;
 export '/main_customer_list/main_customer_list_widget.dart'
     show MainCustomerListWidget;
 export '/main_contracts/main_contracts_widget.dart' show MainContractsWidget;
-export '/my_team/my_team_widget.dart' show MyTeamWidget;
 export '/main_profile_page/main_profile_page_widget.dart'
     show MainProfilePageWidget;
-export '/user_details/user_details_widget.dart' show UserDetailsWidget;
+export '/my_team/my_team_widget.dart' show MyTeamWidget;
 export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
+export '/user_details/user_details_widget.dart' show UserDetailsWidget;
+export '/project_details/project_details_widget.dart' show ProjectDetailsWidget;
 export '/project_details_health_ai/project_details_health_ai_widget.dart'
     show ProjectDetailsHealthAiWidget;
-export '/project_details/project_details_widget.dart' show ProjectDetailsWidget;
 export '/search_page/search_page_widget.dart' show SearchPageWidget;
+export '/offlinedata/offlinedata_widget.dart' show OfflinedataWidget;
+export '/user/user_widget.dart' show UserWidget;
+export '/user_edit_detail/user_edit_detail_widget.dart'
+    show UserEditDetailWidget;
+export '/evaluation_form/evaluation_form_widget.dart' show EvaluationFormWidget;
+export '/user_edit_detail_copy/user_edit_detail_copy_widget.dart'
+    show UserEditDetailCopyWidget;
+export '/evaluation_form2_copy/evaluation_form2_copy_widget.dart'
+    show EvaluationForm2CopyWidget;
+export '/signup/signup_widget.dart' show SignupWidget;
