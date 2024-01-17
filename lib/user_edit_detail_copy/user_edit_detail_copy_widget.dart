@@ -3,11 +3,13 @@ import '/components/modal_success_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_checkbox_group.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -25,6 +27,7 @@ class UserEditDetailCopyWidget extends StatefulWidget {
     required this.lastname,
     this.birthDate,
     required this.perid,
+    required this.status,
   })  : pid = pid ?? '0';
 
   final String pid;
@@ -32,6 +35,7 @@ class UserEditDetailCopyWidget extends StatefulWidget {
   final String? lastname;
   final String? birthDate;
   final String? perid;
+  final String? status;
 
   @override
   _UserEditDetailCopyWidgetState createState() =>
@@ -43,6 +47,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
   late UserEditDetailCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   final animationsMap = {
     'imageOnPageLoadAnimation': AnimationInfo(
@@ -123,22 +128,24 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
       });
     });
 
+    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+        .then((loc) => setState(() => currentUserLocationValue = loc));
     _model.textController1 ??= TextEditingController(text: widget.pid);
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.textController2 ??= TextEditingController(text: widget.name);
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
+    _model.textController3 ??= TextEditingController(text: widget.lastname);
     _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.textController4 ??= TextEditingController();
+    _model.textController4 ??= TextEditingController(text: widget.birthDate);
     _model.textFieldFocusNode4 ??= FocusNode();
 
     _model.textController5 ??= TextEditingController(text: widget.birthDate);
     _model.textFieldFocusNode5 ??= FocusNode();
 
-    _model.textController6 ??= TextEditingController();
+    _model.textController6 ??= TextEditingController(text: widget.status);
     _model.textFieldFocusNode6 ??= FocusNode();
 
     _model.textController7 ??= TextEditingController();
@@ -204,6 +211,9 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
     _model.textController27 ??= TextEditingController();
     _model.textFieldFocusNode27 ??= FocusNode();
 
+    _model.textController28 ??= TextEditingController();
+    _model.textFieldFocusNode28 ??= FocusNode();
+
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -211,11 +221,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
       this,
     );
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
-          _model.textController2?.text = FFLocalizations.of(context).getText(
-            'jofdj434' /* ชื่อ */,
-          );
-        }));
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -237,9 +243,26 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
     }
 
     context.watch<FFAppState>();
+    if (currentUserLocationValue == null) {
+      return Container(
+        color: FlutterFlowTheme.of(context).primaryBackground,
+        child: Center(
+          child: SizedBox(
+            width: 50.0,
+            height: 50.0,
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(
+                FlutterFlowTheme.of(context).primary,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
 
     return Scaffold(
       key: scaffoldKey,
+      resizeToAvoidBottomInset: false,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -254,51 +277,124 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 240.0,
-                      child: Stack(
-                        alignment: const AlignmentDirectional(-0.95, -0.7),
-                        children: [
-                          Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
-                            child: Image.asset(
-                              'assets/images/No-photo-m.png',
-                              width: 600.0,
-                              height: 240.0,
-                              fit: BoxFit.cover,
-                            ).animateOnPageLoad(
-                                animationsMap['imageOnPageLoadAnimation']!),
-                          ),
-                          Align(
-                            alignment: const AlignmentDirectional(-0.95, -0.55),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pop();
-                              },
-                              child: Card(
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: const Color(0xFFF5F5F5),
-                                elevation: 3.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100.0),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Icon(
-                                    Icons.arrow_back_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 24.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        final selectedMedia =
+                            await selectMediaWithSourceBottomSheet(
+                          context: context,
+                          allowPhoto: true,
+                        );
+                        if (selectedMedia != null &&
+                            selectedMedia.every((m) =>
+                                validateFileFormat(m.storagePath, context))) {
+                          setState(() => _model.isDataUploading = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+
+                          try {
+                            selectedUploadedFiles = selectedMedia
+                                .map((m) => FFUploadedFile(
+                                      name: m.storagePath.split('/').last,
+                                      bytes: m.bytes,
+                                      height: m.dimensions?.height,
+                                      width: m.dimensions?.width,
+                                      blurHash: m.blurHash,
+                                    ))
+                                .toList();
+                          } finally {
+                            _model.isDataUploading = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                              selectedMedia.length) {
+                            setState(() {
+                              _model.uploadedLocalFile =
+                                  selectedUploadedFiles.first;
+                            });
+                          } else {
+                            setState(() {});
+                            return;
+                          }
+                        }
+                      },
+                      child: SizedBox(
+                        height: 240.0,
+                        child: Stack(
+                          alignment: const AlignmentDirectional(-0.95, -0.7),
+                          children: [
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Image.memory(
+                                _model.uploadedLocalFile.bytes ??
+                                    Uint8List.fromList([]),
+                                width: 600.0,
+                                height: 240.0,
+                                fit: BoxFit.cover,
+                              ).animateOnPageLoad(
+                                  animationsMap['imageOnPageLoadAnimation']!),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(-0.95, -0.55),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pop();
+                                },
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: const Color(0xFFF5F5F5),
+                                  elevation: 3.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(100.0),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Icon(
+                                      Icons.arrow_back_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 24.0,
+                                    ),
                                   ),
                                 ),
+                              ).animateOnPageLoad(
+                                  animationsMap['cardOnPageLoadAnimation']!),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(-0.02, -0.36),
+                              child: Icon(
+                                Icons.camera_enhance_outlined,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 100.0,
                               ),
-                            ).animateOnPageLoad(
-                                animationsMap['cardOnPageLoadAnimation']!),
-                          ),
-                        ],
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(0.05, 0.51),
+                              child: Text(
+                                FFLocalizations.of(context).getText(
+                                  'xnu1lua6' /* อัพโหลดรูปภาพ */,
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 30.0,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Align(
@@ -639,6 +735,54 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.textController6,
+                        focusNode: _model.textFieldFocusNode6,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'f9am3h2v' /* อายุ */,
+                          ),
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.textController6Validator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           '226zfg84' /* เพศ */,
@@ -782,61 +926,13 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController6,
-                        focusNode: _model.textFieldFocusNode6,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            '4dgbhnvu' /* จำนวนบุตรที่มีชีวิตอยู่ */,
-                          ),
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController6Validator
-                            .asValidator(context),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: TextFormField(
                         controller: _model.textController7,
                         focusNode: _model.textFieldFocusNode7,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'm0xgdxp6' /* จำนวนบุตรที่กำลังเรียนอยู่ */,
+                            '4dgbhnvu' /* จำนวนบุตรที่มีชีวิตอยู่ */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -884,7 +980,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            '5o0x16of' /* กรุ๊ปเลือด */,
+                            'm0xgdxp6' /* จำนวนบุตรที่กำลังเรียนอยู่ */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -932,7 +1028,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'm9dpg5lz' /* อาชีพหลัก */,
+                            '5o0x16of' /* กรุ๊ปเลือด */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -980,7 +1076,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            '1j9q5t89' /* อาชีพเสริม */,
+                            'm9dpg5lz' /* อาชีพหลัก */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -1028,7 +1124,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            '4vgor6sr' /* รายได้ต่อเดือน (บาท) */,
+                            '1j9q5t89' /* อาชีพเสริม */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -1069,16 +1165,6 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'zee74xur' /* ที่อยู่ตามสำเนาทะเบียนบ้าน */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController12,
                         focusNode: _model.textFieldFocusNode12,
@@ -1086,7 +1172,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'pkawu2wz' /* บ้านเลขที่ */,
+                            '4vgor6sr' /* รายได้ต่อเดือน (บาท) */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -1124,6 +1210,46 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                             .asValidator(context),
                       ),
                     ),
+                    Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 4.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: SizedBox(
+                        height: 200.0,
+                        child: FlutterFlowGoogleMap(
+                          controller: _model.googleMapsController,
+                          onCameraIdle: (latLng) =>
+                              _model.googleMapsCenter = latLng,
+                          initialLocation: _model.googleMapsCenter ??=
+                              currentUserLocationValue!,
+                          markerColor: GoogleMarkerColor.blue,
+                          mapType: MapType.satellite,
+                          style: GoogleMapStyle.standard,
+                          initialZoom: 30.0,
+                          allowInteraction: true,
+                          allowZoom: true,
+                          showZoomControls: true,
+                          showLocation: true,
+                          showCompass: false,
+                          showMapToolbar: false,
+                          showTraffic: false,
+                          centerMapOnMarkerTap: true,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          'zee74xur' /* ที่อยู่ตามสำเนาทะเบียนบ้าน */,
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                    ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
@@ -1134,7 +1260,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'skqa5qgd' /* ถนน ซอย */,
+                            'pkawu2wz' /* บ้านเลขที่ */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -1175,21 +1301,75 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.textController14,
+                        focusNode: _model.textFieldFocusNode14,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'skqa5qgd' /* ถนน ซอย */,
+                          ),
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.textController14Validator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.dropDownValueController4 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            's0paa7tg' /* Option 1 */,
+                            'zl811127' /* ไม่มีผู้ดูแล */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '5rh750bw' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '9l63ttvw' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
                           )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue4 = val),
-                        width: 300.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          'yt7xyycv' /* จังหวัด */,
+                          'afjqzl8b' /* ท่านมีผู้ดูแลหรือไม่ */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -1218,16 +1398,22 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            '0jfzohvf' /* Option 1 */,
+                            'hgrcqb7b' /* ไม่มีผู้ดูแล */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'j4t6rvl7' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '8d7k4dkb' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
                           )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue5 = val),
-                        width: 300.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          '7kjppcmc' /* อำเภอ */,
+                          'i2f92ybv' /* ท่านมีผู้ดูแลหรือไม่ */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -1256,16 +1442,22 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            '8aelh6oc' /* Option 1 */,
+                            't7ndim4m' /* ไม่มีผู้ดูแล */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'ulc70p8o' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '3q1wxjqa' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
                           )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue6 = val),
-                        width: 300.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          'gei227vv' /* ตำบล */,
+                          '07k9b7pu' /* ท่านมีผู้ดูแลหรือไม่ */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -1294,16 +1486,22 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            '9f3wlp5g' /* Option 1 */,
+                            'camza1uc' /* ไม่มีผู้ดูแล */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '0nfy5qvz' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '087iyq3u' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
                           )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue7 = val),
-                        width: 300.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          'lky4hto0' /* หมู่บ้าน */,
+                          'xnh21h9g' /* ท่านมีผู้ดูแลหรือไม่ */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -1362,8 +1560,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController14,
-                        focusNode: _model.textFieldFocusNode14,
+                        controller: _model.textController15,
+                        focusNode: _model.textFieldFocusNode15,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -1402,7 +1600,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController14Validator
+                        validator: _model.textController15Validator
                             .asValidator(context),
                       ),
                     ),
@@ -1410,8 +1608,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController15,
-                        focusNode: _model.textFieldFocusNode15,
+                        controller: _model.textController16,
+                        focusNode: _model.textFieldFocusNode16,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -1450,7 +1648,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController15Validator
+                        validator: _model.textController16Validator
                             .asValidator(context),
                       ),
                     ),
@@ -1634,71 +1832,13 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController16,
-                        focusNode: _model.textFieldFocusNode16,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            'o92qzjdj' /* เบอร์โทรศัพท์ */,
-                          ),
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController16Validator
-                            .asValidator(context),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'p78za22k' /* ข้อมูลเชิงพื้นที่ */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: TextFormField(
                         controller: _model.textController17,
                         focusNode: _model.textFieldFocusNode17,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'qt15ks9f' /* พิกัดบ้าน ละติจูด */,
+                            'o92qzjdj' /* เบอร์โทรศัพท์ */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -1739,9 +1879,67 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          'p78za22k' /* ข้อมูลเชิงพื้นที่ */,
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
                         controller: _model.textController18,
                         focusNode: _model.textFieldFocusNode18,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'qt15ks9f' /* พิกัดบ้าน ละติจูด */,
+                          ),
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.textController18Validator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.textController19,
+                        focusNode: _model.textFieldFocusNode19,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -1780,7 +1978,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController18Validator
+                        validator: _model.textController19Validator
                             .asValidator(context),
                       ),
                     ),
@@ -1832,8 +2030,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController19,
-                        focusNode: _model.textFieldFocusNode19,
+                        controller: _model.textController20,
+                        focusNode: _model.textFieldFocusNode20,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -1872,7 +2070,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController19Validator
+                        validator: _model.textController20Validator
                             .asValidator(context),
                       ),
                     ),
@@ -1880,8 +2078,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController20,
-                        focusNode: _model.textFieldFocusNode20,
+                        controller: _model.textController21,
+                        focusNode: _model.textFieldFocusNode21,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -1920,7 +2118,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController20Validator
+                        validator: _model.textController21Validator
                             .asValidator(context),
                       ),
                     ),
@@ -2011,8 +2209,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController21,
-                        focusNode: _model.textFieldFocusNode21,
+                        controller: _model.textController22,
+                        focusNode: _model.textFieldFocusNode22,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
@@ -2051,7 +2249,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController21Validator
+                        validator: _model.textController22Validator
                             .asValidator(context),
                       ),
                     ),
@@ -2108,61 +2306,13 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController22,
-                        focusNode: _model.textFieldFocusNode22,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            '2kftmhw8' /* ระบุ */,
-                          ),
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController22Validator
-                            .asValidator(context),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: TextFormField(
                         controller: _model.textController23,
                         focusNode: _model.textFieldFocusNode23,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'jzd3l69a' /* สถานที่รักษา */,
+                            '2kftmhw8' /* ระบุ */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -2210,7 +2360,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'o5izpc2v' /* ท่านเคติดโรคโควิด (COVID-19) ก... */,
+                            'jzd3l69a' /* สถานที่รักษา */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -2245,6 +2395,54 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium,
                         validator: _model.textController24Validator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.textController25,
+                        focusNode: _model.textFieldFocusNode25,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            'o5izpc2v' /* ท่านเคติดโรคโควิด (COVID-19) ก... */,
+                          ),
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.textController25Validator
                             .asValidator(context),
                       ),
                     ),
@@ -2306,26 +2504,38 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController14 ??=
+                        controller: _model.typeOfPersonValueController ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            'o4i7lca7' /* ไม่มีผู้ดูแล */,
+                            'z6l5e5ef' /* ไม่ระบุ */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'gk8in451' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
+                            '3v4kp4j4' /* หญิงหม้าย */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'tb4yso4j' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
+                            'akn1ma83' /* บุคคลทั่วไป */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'l03bmnge' /* ผู้ด้อยโอกาส */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'fflnwj0x' /* เด็กกำพร้า */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'oasu5czw' /* ผู้พิการ */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'c8dzg6wi' /* ผู้สูงอายุ */,
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.dropDownValue14 = val),
+                            setState(() => _model.typeOfPersonValue = val),
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          '21i17kyn' /* ท่านมีผู้ดูแลหรือไม่ */,
+                          '21i17kyn' /* ประเภทกลุ่มเปราะบาง */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -2350,7 +2560,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController15 ??=
+                        controller: _model.dropDownValueController14 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
@@ -2364,7 +2574,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.dropDownValue15 = val),
+                            setState(() => _model.dropDownValue14 = val),
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
@@ -2394,7 +2604,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController16 ??=
+                        controller: _model.dropDownValueController15 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
@@ -2408,7 +2618,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.dropDownValue16 = val),
+                            setState(() => _model.dropDownValue15 = val),
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
@@ -2448,7 +2658,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController17 ??=
+                        controller: _model.dropDownValueController16 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
@@ -2462,7 +2672,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.dropDownValue17 = val),
+                            setState(() => _model.dropDownValue16 = val),
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
@@ -2492,61 +2702,13 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: TextFormField(
-                        controller: _model.textController25,
-                        focusNode: _model.textFieldFocusNode25,
-                        autofocus: true,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: FFLocalizations.of(context).getText(
-                            's30wjbxf' /* ชื่อผู้ดูแลหลัก */,
-                          ),
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).alternate,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).primary,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: FlutterFlowTheme.of(context).error,
-                              width: 2.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                        validator: _model.textController25Validator
-                            .asValidator(context),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: TextFormField(
                         controller: _model.textController26,
                         focusNode: _model.textFieldFocusNode26,
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            'j3byski0' /* ชื่อสกุลผู้ดูแลหลัก */,
+                            's30wjbxf' /* ชื่อผู้ดูแลหลัก */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -2594,7 +2756,7 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: FFLocalizations.of(context).getText(
-                            '9kt51d4u' /* วันเดือนปีเกิด */,
+                            'j3byski0' /* ชื่อสกุลผู้ดูแลหลัก */,
                           ),
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -2635,39 +2797,75 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: TextFormField(
+                        controller: _model.textController28,
+                        focusNode: _model.textFieldFocusNode28,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelText: FFLocalizations.of(context).getText(
+                            '9kt51d4u' /* วันเดือนปีเกิด */,
+                          ),
+                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).alternate,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        validator: _model.textController28Validator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownValueController18 ??=
+                        controller: _model.dropDownValueController17 ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(
-                            '8zv1l6z6' /* ไม่ระบุ */,
+                            '7n3ub31t' /* ไม่มีผู้ดูแล */,
                           ),
                           FFLocalizations.of(context).getText(
-                            '3dg53e2z' /* พ่อ */,
+                            'xb6w277a' /* มีผู้ดูแล-สมาชิกในครอบครัว */,
                           ),
                           FFLocalizations.of(context).getText(
-                            'ueof5zik' /* แม่ */,
-                          ),
-                          FFLocalizations.of(context).getText(
-                            'oqr7gpil' /* สามี */,
-                          ),
-                          FFLocalizations.of(context).getText(
-                            '2jp3sn2j' /* ภรรยา */,
-                          ),
-                          FFLocalizations.of(context).getText(
-                            'c8nz3dz4' /* ลูก */,
-                          ),
-                          FFLocalizations.of(context).getText(
-                            '498kd0ot' /* ผู้อุปการะ */,
+                            '2m3pkeg6' /* มีผู้ดูแล-จ้างคนนอกครอบครัวมาด... */,
                           )
                         ],
                         onChanged: (val) =>
-                            setState(() => _model.dropDownValue18 = val),
-                        width: 300.0,
+                            setState(() => _model.dropDownValue17 = val),
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 50.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
                         hintText: FFLocalizations.of(context).getText(
-                          '87r2x4wd' /* ความสัมพันธ์เกี่ยวข้องกับกลุ่ม... */,
+                          'q5k0rrfx' /* ท่านมีผู้ดูแลหรือไม่ */,
                         ),
                         icon: Icon(
                           Icons.keyboard_arrow_down_rounded,
@@ -2777,6 +2975,8 @@ class _UserEditDetailCopyWidgetState extends State<UserEditDetailCopyWidget>
                                   _model.apiResultfkp =
                                       await AddpersonqtnadditionalphpCall.call(
                                     perid: _model.textController1.text,
+                                    ofcid: FFAppState().userid,
+                                    image: _model.uploadedLocalFile,
                                   );
                                   if ((_model.apiResultfkp?.succeeded ??
                                       true)) {

@@ -75,7 +75,7 @@ class LogInPhpCall {
         response,
         r'''$.token''',
       ));
-  static int? userid(dynamic response) => castToType<int>(getJsonField(
+  static String? userid(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.user.userId''',
       ));
@@ -124,6 +124,8 @@ class AddpersonqtnadditionalphpCall {
     String? bloodType = '',
     String? addOccid = '',
     String? roladr = '',
+    String? ofcid = '',
+    FFUploadedFile? image,
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'addpersonqtnadditionalphp',
@@ -136,8 +138,10 @@ class AddpersonqtnadditionalphpCall {
         'blood_type': bloodType,
         'add_occid': addOccid,
         'roladr': roladr,
+        'ofcid': ofcid,
+        'image': image,
       },
-      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      bodyType: BodyType.MULTIPART,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
@@ -263,6 +267,58 @@ class GetPersonByPidCall {
   static String? perid(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.data.perid''',
+      ));
+}
+
+class GetPersonByPidCopyCall {
+  static Future<ApiCallResponse> call({
+    String? pid = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getPersonByPid Copy',
+      apiUrl: 'https://dekequaltani.com/appDsrdSystem/api/getPersonByPid2.php',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'pid': pid,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static String? nameByPid(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data.nme''',
+      ));
+  static String? addresByPid(dynamic response) =>
+      castToType<String>(getJsonField(
+        response,
+        r'''$.data.rolplc''',
+      ));
+  static List? personData(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      ) as List?;
+  static String? birthdate(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data.brtdte''',
+      ));
+  static String? perid(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data.perid''',
+      ));
+  static String? status(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.status''',
+      ));
+  static String? lastName(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.data.surnme''',
       ));
 }
 

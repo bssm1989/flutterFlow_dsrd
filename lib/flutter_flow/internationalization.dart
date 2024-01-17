@@ -143,6 +143,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': 'Gabung',
       'ms': 'Log masuk',
     },
+    'rih94ily': {
+      'en': 'ลงทะเบียน',
+      'id': 'Gabung',
+      'ms': 'Log masuk',
+    },
     'ivhc1wf0': {
       'en': 'ลงทะเบียน',
       'id': 'Gabung',
@@ -361,6 +366,94 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '__',
     },
   },
+  // Main_Contracts
+  {
+    '4h88trkp': {
+      'en': 'Contracts',
+      'id': 'Kontrak',
+      'ms': 'Kontrak',
+    },
+    'smh1o93d': {
+      'en': 'Contracts',
+      'id': 'Kontrak',
+      'ms': 'Kontrak',
+    },
+    't967eizl': {
+      'en': 'Projects',
+      'id': 'Proyek',
+      'ms': 'Projek',
+    },
+    'dpt94d56': {
+      'en': 'No-Code Platform Design',
+      'id': 'Desain Platform Tanpa Kode',
+      'ms': 'Reka Bentuk Platform Tanpa Kod',
+    },
+    '2a7y5e2w': {
+      'en': 'Design Team Docs',
+      'id': 'Dokumen Tim Desain',
+      'ms': 'Dokumen Pasukan Reka Bentuk',
+    },
+    'dlt46loo': {
+      'en': 'Contracts',
+      'id': 'Kontrak',
+      'ms': 'Kontrak',
+    },
+    'sqmgdsam': {
+      'en': 'ACME Co.',
+      'id': 'ACME Co.',
+      'ms': 'ACME Co.',
+    },
+    '8t72ssfn': {
+      'en': 'Contracts for New Opportunities',
+      'id': 'Kontrak untuk Peluang Baru',
+      'ms': 'Kontrak untuk Peluang Baru',
+    },
+    'h9kiq8rj': {
+      'en': 'Next Action',
+      'id': 'Tindakan Selanjutnya',
+      'ms': 'Tindakan Seterusnya',
+    },
+    '7mjz03wi': {
+      'en': 'Tuesday, 10:00am',
+      'id': 'Selasa, 10:00',
+      'ms': 'Selasa, 10:00 pagi',
+    },
+    '8e820p1r': {
+      'en': 'In Progress',
+      'id': 'Sedang berlangsung',
+      'ms': 'Sedang Berlangsung',
+    },
+    '7wcrhzda': {
+      'en': 'HealthAi',
+      'id': 'KesehatanAi',
+      'ms': 'KesihatanAi',
+    },
+    'sen48p1q': {
+      'en': 'Client Acquisition for Q3',
+      'id': 'Akuisisi Klien untuk Q3',
+      'ms': 'Pemerolehan Pelanggan untuk S3',
+    },
+    'fp6xlmv9': {
+      'en': 'Next Action',
+      'id': 'Tindakan Selanjutnya',
+      'ms': 'Tindakan Seterusnya',
+    },
+    'k0rirjak': {
+      'en': 'Tuesday, 10:00am',
+      'id': 'Selasa, 10:00',
+      'ms': 'Selasa, 10:00 pagi',
+    },
+    'nanoxp6w': {
+      'en': 'In Progress',
+      'id': 'Sedang berlangsung',
+      'ms': 'Sedang Berlangsung',
+    },
+    'j08eiorc': {
+      'en': '__',
+      'id': '__',
+      'ms': '__',
+    },
+  },
   // Main_customerList
   {
     'n99lg1qh': {
@@ -574,94 +667,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Pelanggan',
     },
     '3ourv2w9': {
-      'en': '__',
-      'id': '__',
-      'ms': '__',
-    },
-  },
-  // Main_Contracts
-  {
-    '4h88trkp': {
-      'en': 'Contracts',
-      'id': 'Kontrak',
-      'ms': 'Kontrak',
-    },
-    'smh1o93d': {
-      'en': 'Contracts',
-      'id': 'Kontrak',
-      'ms': 'Kontrak',
-    },
-    't967eizl': {
-      'en': 'Projects',
-      'id': 'Proyek',
-      'ms': 'Projek',
-    },
-    'dpt94d56': {
-      'en': 'No-Code Platform Design',
-      'id': 'Desain Platform Tanpa Kode',
-      'ms': 'Reka Bentuk Platform Tanpa Kod',
-    },
-    '2a7y5e2w': {
-      'en': 'Design Team Docs',
-      'id': 'Dokumen Tim Desain',
-      'ms': 'Dokumen Pasukan Reka Bentuk',
-    },
-    'dlt46loo': {
-      'en': 'Contracts',
-      'id': 'Kontrak',
-      'ms': 'Kontrak',
-    },
-    'sqmgdsam': {
-      'en': 'ACME Co.',
-      'id': 'ACME Co.',
-      'ms': 'ACME Co.',
-    },
-    '8t72ssfn': {
-      'en': 'Contracts for New Opportunities',
-      'id': 'Kontrak untuk Peluang Baru',
-      'ms': 'Kontrak untuk Peluang Baru',
-    },
-    'h9kiq8rj': {
-      'en': 'Next Action',
-      'id': 'Tindakan Selanjutnya',
-      'ms': 'Tindakan Seterusnya',
-    },
-    '7mjz03wi': {
-      'en': 'Tuesday, 10:00am',
-      'id': 'Selasa, 10:00',
-      'ms': 'Selasa, 10:00 pagi',
-    },
-    '8e820p1r': {
-      'en': 'In Progress',
-      'id': 'Sedang berlangsung',
-      'ms': 'Sedang Berlangsung',
-    },
-    '7wcrhzda': {
-      'en': 'HealthAi',
-      'id': 'KesehatanAi',
-      'ms': 'KesihatanAi',
-    },
-    'sen48p1q': {
-      'en': 'Client Acquisition for Q3',
-      'id': 'Akuisisi Klien untuk Q3',
-      'ms': 'Pemerolehan Pelanggan untuk S3',
-    },
-    'fp6xlmv9': {
-      'en': 'Next Action',
-      'id': 'Tindakan Selanjutnya',
-      'ms': 'Tindakan Seterusnya',
-    },
-    'k0rirjak': {
-      'en': 'Tuesday, 10:00am',
-      'id': 'Selasa, 10:00',
-      'ms': 'Selasa, 10:00 pagi',
-    },
-    'nanoxp6w': {
-      'en': 'In Progress',
-      'id': 'Sedang berlangsung',
-      'ms': 'Sedang Berlangsung',
-    },
-    'j08eiorc': {
       'en': '__',
       'id': '__',
       'ms': '__',
@@ -1237,387 +1242,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
   },
-  // userEditDetail
-  {
-    'k6wl4qrj': {
-      'en': 'อัพโหลดรูป',
-      'id': '',
-      'ms': '',
-    },
-    'ctjbpa5h': {
-      'en': 'เลขบัตรประชาชน...',
-      'id': '',
-      'ms': '',
-    },
-    'hvq6zmz2': {
-      'en': 'เลขบัตรประชาชน',
-      'id': '',
-      'ms': '',
-    },
-    'dhlwso0a': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    '32oqg688': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'h5t7pg0j': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'mrjp52xv': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    '507qoh47': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'yues8ywo': {
-      'en': 'เพศ',
-      'id': '',
-      'ms': '',
-    },
-    'a953pmlz': {
-      'en': 'ชาย',
-      'id': '',
-      'ms': '',
-    },
-    'frv0ykaf': {
-      'en': 'หญิง',
-      'id': '',
-      'ms': '',
-    },
-    'xw6ke3z5': {
-      'en': 'Option 1',
-      'id': '',
-      'ms': '',
-    },
-    'onppcq2g': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'oylndh10': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'sy2sil8x': {
-      'en': 'ยกเลิก',
-      'id': 'Hasilkan Penawaran',
-      'ms': 'Hasilkan Petikan',
-    },
-    'w9b8gsdk': {
-      'en': 'บันทึก',
-      'id': 'Lihat Perusahaan',
-      'ms': 'Lihat Syarikat',
-    },
-    's3snedm8': {
-      'en': 'Home',
-      'id': 'Rumah',
-      'ms': 'Rumah',
-    },
-  },
-  // Evaluation-Form
-  {
-    'u3mlty81': {
-      'en': 'อัพโหลดรูป',
-      'id': '',
-      'ms': '',
-    },
-    'mrkfdnll': {
-      'en': 'ข้อมูลแบบประเมินสุขภาวะผู้เปราะบาง',
-      'id': '',
-      'ms': '',
-    },
-    '55ygdsul': {
-      'en':
-          'คำชี้แจง: ขอความร่วมมือ ประเมินสุขภาวะผู้เปราะบางในช่วง 3 เดือนที่ผ่านมา โดยเลือกระดับคะแนนตามเ',
-      'id': '',
-      'ms': '',
-    },
-    '609socrd': {
-      'en':
-          'เกณฑ์การประเมิน\n0 คะแนน ไม่มีความเปราะบาง\n1-2 คะแนน เริ่มเปราะบาง\n3 คะแนนขึ้นไป มีภาวะเปราะบาง',
-      'id': '',
-      'ms': '',
-    },
-    'gnrbb53x': {
-      'en':
-          '1. จดจำวัน เวลา สถานที่ บุคคล ทวนคำ 3 คำได้ หลังจากบอกคำไปแล้ว 1 นาที เช่น หลานสาว สวรรค์ ภูเขา',
-      'id': '',
-      'ms': '',
-    },
-    'n6d03b78': {
-      'en': '0 = ความจำดี',
-      'id': '',
-      'ms': '',
-    },
-    'axhyz6ms': {
-      'en': '1 = ความจำพอใช้',
-      'id': '',
-      'ms': '',
-    },
-    'bujnhj76': {
-      'en': '2 = ความจำไม่ดี',
-      'id': '',
-      'ms': '',
-    },
-    'j6vhq86b': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'rsdfcgvx': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'y6tm8q90': {
-      'en': '2. มีความรู้สึกเหนื่อยล้าบ่อยครั้งใน 1 วัน',
-      'id': '',
-      'ms': '',
-    },
-    'o8zhpccf': {
-      'en': '0 = ไม่มีเลย',
-      'id': '',
-      'ms': '',
-    },
-    'uwa3ka9t': {
-      'en': '1 = มีบ้าง',
-      'id': '',
-      'ms': '',
-    },
-    '3h0zsxnl': {
-      'en': '2 = บ่อยครั้ง',
-      'id': '',
-      'ms': '',
-    },
-    '78tved4y': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'cby3evcj': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'f2j0j3qg': {
-      'en': '3. เดินขึ้นบันได 10 ขั้นได้หรือไม่',
-      'id': '',
-      'ms': '',
-    },
-    '79lembox': {
-      'en': '0 = ได้ 10 ขั้น',
-      'id': '',
-      'ms': '',
-    },
-    'l70egzfx': {
-      'en': '1 = ได้ 5 ขั้น',
-      'id': '',
-      'ms': '',
-    },
-    's0cyzar7': {
-      'en': '2 = 0-4  ขั้น',
-      'id': '',
-      'ms': '',
-    },
-    'go5nta2m': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'slwd2i56': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    '16uc9nqb': {
-      'en': '4. เดินไป-กลับ 20 ก้าว โดยไม่มีอุปกรณ์ข่วย',
-      'id': '',
-      'ms': '',
-    },
-    'wwi8x8ai': {
-      'en': '0 = ได้ 20 ก้าว',
-      'id': '',
-      'ms': '',
-    },
-    'j0c83ayf': {
-      'en': '1 = ได้ 10 ก้าว',
-      'id': '',
-      'ms': '',
-    },
-    '2izdnwgi': {
-      'en': '2 = ได้น้อยกว่า 10 ก้าว',
-      'id': '',
-      'ms': '',
-    },
-    'fscibzug': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'epv5sncc': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'kyx7qbz0': {
-      'en': '5. มีโรคประจำตัวน้อยกว่า 4 โรค',
-      'id': '',
-      'ms': '',
-    },
-    'onkywbx4': {
-      'en': '0 = 0-3 โรค',
-      'id': '',
-      'ms': '',
-    },
-    'nog1281u': {
-      'en': '1 = 4-6 โรค',
-      'id': '',
-      'ms': '',
-    },
-    'e302w8qs': {
-      'en': '2 = 7 โรคขึ้นไป',
-      'id': '',
-      'ms': '',
-    },
-    '4diao26a': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'e0zu866h': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'sxzubzrh': {
-      'en': '6. มีน้ำหนักลดหรือเพิ่มมากกว่าหรือเท่ากับ 5% ใน 1 ปี',
-      'id': '',
-      'ms': '',
-    },
-    'x96yy5d6': {
-      'en': '0 = น้ำหนักคงที่',
-      'id': '',
-      'ms': '',
-    },
-    'mfozccg9': {
-      'en': '1 = ลด หรือ เพิ่ม 0-4%',
-      'id': '',
-      'ms': '',
-    },
-    '8grrrumg': {
-      'en': '2 = ลด หรือ เพิ่ม 5% ขึ้นไป',
-      'id': '',
-      'ms': '',
-    },
-    'pbuupukm': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    '1dphbdnt': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    '8xsv4i6a': {
-      'en': '7. มีความคิดเบื่อหน่าย ท้อใจ ว้าเหว่ อยากมีเพื่อนในสัปดาห์ก่อน',
-      'id': '',
-      'ms': '',
-    },
-    'rojlzck0': {
-      'en': '0 = ไม่มีเลย',
-      'id': '',
-      'ms': '',
-    },
-    'is48kx7e': {
-      'en': '1 = มีบ้าง',
-      'id': '',
-      'ms': '',
-    },
-    '2742lpou': {
-      'en': '2 = บ่อยครั้ง',
-      'id': '',
-      'ms': '',
-    },
-    '84kpzj94': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'zfbo5r5w': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'pa7xlm9p': {
-      'en': '8. มีความคิดฆ่าตัวตายในเดือนที่ผ่านมา',
-      'id': '',
-      'ms': '',
-    },
-    '3cucdezk': {
-      'en': '0 = ไม่มีเลย',
-      'id': '',
-      'ms': '',
-    },
-    'n02d6kma': {
-      'en': '1 = มีบ้าง',
-      'id': '',
-      'ms': '',
-    },
-    'rwarbkta': {
-      'en': '2 = บ่อยครั้ง',
-      'id': '',
-      'ms': '',
-    },
-    'oflmdang': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'alb2zzwz': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'sh57gqgv': {
-      'en': 'รวม',
-      'id': '',
-      'ms': '',
-    },
-    'ir5wuvey': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'fti0wktm': {
-      'en': 'ข้อสังเกต / ความคิดเห็นอื่นๆ ',
-      'id': '',
-      'ms': '',
-    },
-    'vlywvoi8': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'p54rzz5n': {
-      'en': 'Home',
-      'id': 'Rumah',
-      'ms': 'Rumah',
-    },
-  },
   // userEditDetailCopy
   {
+    'xnu1lua6': {
+      'en': 'อัพโหลดรูปภาพ',
+      'id': '',
+      'ms': '',
+    },
     'cf806t2s': {
       'en': 'อัพโหลดรูป',
       'id': '',
@@ -1668,11 +1299,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
-    'jofdj434': {
-      'en': 'ชื่อ',
-      'id': '',
-      'ms': '',
-    },
     'ykjkwyd6': {
       'en': 'นามสกุล',
       'id': '',
@@ -1684,6 +1310,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     '4qubuvax': {
+      'en': 'อายุ',
+      'id': '',
+      'ms': '',
+    },
+    'f9am3h2v': {
       'en': 'อายุ',
       'id': '',
       'ms': '',
@@ -1823,62 +1454,102 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
-    's0paa7tg': {
-      'en': 'Option 1',
+    'zl811127': {
+      'en': 'ไม่มีผู้ดูแล',
       'id': '',
       'ms': '',
     },
-    'yt7xyycv': {
-      'en': 'จังหวัด',
+    '5rh750bw': {
+      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
       'id': '',
       'ms': '',
     },
-    'd3xrhlbu': {
+    '9l63ttvw': {
+      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
+      'id': '',
+      'ms': '',
+    },
+    'afjqzl8b': {
+      'en': 'ท่านมีผู้ดูแลหรือไม่',
+      'id': '',
+      'ms': '',
+    },
+    '8x2m8vg4': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
     },
-    '0jfzohvf': {
-      'en': 'Option 1',
+    'hgrcqb7b': {
+      'en': 'ไม่มีผู้ดูแล',
       'id': '',
       'ms': '',
     },
-    '7kjppcmc': {
-      'en': 'อำเภอ',
+    'j4t6rvl7': {
+      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
       'id': '',
       'ms': '',
     },
-    '7j3ndjfd': {
+    '8d7k4dkb': {
+      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
+      'id': '',
+      'ms': '',
+    },
+    'i2f92ybv': {
+      'en': 'ท่านมีผู้ดูแลหรือไม่',
+      'id': '',
+      'ms': '',
+    },
+    '6atkx9hd': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
     },
-    '8aelh6oc': {
-      'en': 'Option 1',
+    't7ndim4m': {
+      'en': 'ไม่มีผู้ดูแล',
       'id': '',
       'ms': '',
     },
-    'gei227vv': {
-      'en': 'ตำบล',
+    'ulc70p8o': {
+      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
       'id': '',
       'ms': '',
     },
-    '5z4gxr6z': {
+    '3q1wxjqa': {
+      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
+      'id': '',
+      'ms': '',
+    },
+    '07k9b7pu': {
+      'en': 'ท่านมีผู้ดูแลหรือไม่',
+      'id': '',
+      'ms': '',
+    },
+    '4p66cbil': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
     },
-    '9f3wlp5g': {
-      'en': 'Option 1',
+    'camza1uc': {
+      'en': 'ไม่มีผู้ดูแล',
       'id': '',
       'ms': '',
     },
-    'lky4hto0': {
-      'en': 'หมู่บ้าน',
+    '0nfy5qvz': {
+      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
       'id': '',
       'ms': '',
     },
-    'wyufq580': {
+    '087iyq3u': {
+      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
+      'id': '',
+      'ms': '',
+    },
+    'xnh21h9g': {
+      'en': 'ท่านมีผู้ดูแลหรือไม่',
+      'id': '',
+      'ms': '',
+    },
+    'lwd721n7': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
@@ -2223,23 +1894,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
-    'o4i7lca7': {
-      'en': 'ไม่มีผู้ดูแล',
+    'z6l5e5ef': {
+      'en': 'ไม่ระบุ',
       'id': '',
       'ms': '',
     },
-    'gk8in451': {
-      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
+    '3v4kp4j4': {
+      'en': 'หญิงหม้าย',
       'id': '',
       'ms': '',
     },
-    'tb4yso4j': {
-      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
+    'akn1ma83': {
+      'en': 'บุคคลทั่วไป',
+      'id': '',
+      'ms': '',
+    },
+    'l03bmnge': {
+      'en': 'ผู้ด้อยโอกาส',
+      'id': '',
+      'ms': '',
+    },
+    'fflnwj0x': {
+      'en': 'เด็กกำพร้า',
+      'id': '',
+      'ms': '',
+    },
+    'oasu5czw': {
+      'en': 'ผู้พิการ',
+      'id': '',
+      'ms': '',
+    },
+    'c8dzg6wi': {
+      'en': 'ผู้สูงอายุ',
       'id': '',
       'ms': '',
     },
     '21i17kyn': {
-      'en': 'ท่านมีผู้ดูแลหรือไม่',
+      'en': 'ประเภทกลุ่มเปราะบาง',
       'id': '',
       'ms': '',
     },
@@ -2343,47 +2034,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
-    '8zv1l6z6': {
-      'en': 'ไม่ระบุ',
+    '7n3ub31t': {
+      'en': 'ไม่มีผู้ดูแล',
       'id': '',
       'ms': '',
     },
-    '3dg53e2z': {
-      'en': 'พ่อ',
+    'xb6w277a': {
+      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
       'id': '',
       'ms': '',
     },
-    'ueof5zik': {
-      'en': 'แม่',
+    '2m3pkeg6': {
+      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
       'id': '',
       'ms': '',
     },
-    'oqr7gpil': {
-      'en': 'สามี',
+    'q5k0rrfx': {
+      'en': 'ท่านมีผู้ดูแลหรือไม่',
       'id': '',
       'ms': '',
     },
-    '2jp3sn2j': {
-      'en': 'ภรรยา',
-      'id': '',
-      'ms': '',
-    },
-    'c8nz3dz4': {
-      'en': 'ลูก',
-      'id': '',
-      'ms': '',
-    },
-    '498kd0ot': {
-      'en': 'ผู้อุปการะ',
-      'id': '',
-      'ms': '',
-    },
-    '87r2x4wd': {
-      'en': 'ความสัมพันธ์เกี่ยวข้องกับกลุ่มเปราะบาง',
-      'id': '',
-      'ms': '',
-    },
-    '597k7l2i': {
+    'bxubrxo1': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
@@ -2399,6 +2070,385 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Lihat Syarikat',
     },
     'h65rhqrq': {
+      'en': 'Home',
+      'id': 'Rumah',
+      'ms': 'Rumah',
+    },
+  },
+  // Evaluation-Form
+  {
+    'u3mlty81': {
+      'en': 'อัพโหลดรูป',
+      'id': '',
+      'ms': '',
+    },
+    'mrkfdnll': {
+      'en': 'ข้อมูลแบบประเมินสุขภาวะผู้เปราะบาง',
+      'id': '',
+      'ms': '',
+    },
+    '55ygdsul': {
+      'en':
+          'คำชี้แจง: ขอความร่วมมือ ประเมินสุขภาวะผู้เปราะบางในช่วง 3 เดือนที่ผ่านมา โดยเลือกระดับคะแนนตามเ',
+      'id': '',
+      'ms': '',
+    },
+    '609socrd': {
+      'en':
+          'เกณฑ์การประเมิน\n0 คะแนน ไม่มีความเปราะบาง\n1-2 คะแนน เริ่มเปราะบาง\n3 คะแนนขึ้นไป มีภาวะเปราะบาง',
+      'id': '',
+      'ms': '',
+    },
+    'gnrbb53x': {
+      'en':
+          '1. จดจำวัน เวลา สถานที่ บุคคล ทวนคำ 3 คำได้ หลังจากบอกคำไปแล้ว 1 นาที เช่น หลานสาว สวรรค์ ภูเขา',
+      'id': '',
+      'ms': '',
+    },
+    'n6d03b78': {
+      'en': '0 = ความจำดี',
+      'id': '',
+      'ms': '',
+    },
+    'axhyz6ms': {
+      'en': '1 = ความจำพอใช้',
+      'id': '',
+      'ms': '',
+    },
+    'bujnhj76': {
+      'en': '2 = ความจำไม่ดี',
+      'id': '',
+      'ms': '',
+    },
+    'j6vhq86b': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'rsdfcgvx': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'y6tm8q90': {
+      'en': '2. มีความรู้สึกเหนื่อยล้าบ่อยครั้งใน 1 วัน',
+      'id': '',
+      'ms': '',
+    },
+    'o8zhpccf': {
+      'en': '0 = ไม่มีเลย',
+      'id': '',
+      'ms': '',
+    },
+    'uwa3ka9t': {
+      'en': '1 = มีบ้าง',
+      'id': '',
+      'ms': '',
+    },
+    '3h0zsxnl': {
+      'en': '2 = บ่อยครั้ง',
+      'id': '',
+      'ms': '',
+    },
+    '78tved4y': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'cby3evcj': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'f2j0j3qg': {
+      'en': '3. เดินขึ้นบันได 10 ขั้นได้หรือไม่',
+      'id': '',
+      'ms': '',
+    },
+    '79lembox': {
+      'en': '0 = ได้ 10 ขั้น',
+      'id': '',
+      'ms': '',
+    },
+    'l70egzfx': {
+      'en': '1 = ได้ 5 ขั้น',
+      'id': '',
+      'ms': '',
+    },
+    's0cyzar7': {
+      'en': '2 = 0-4  ขั้น',
+      'id': '',
+      'ms': '',
+    },
+    'go5nta2m': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'slwd2i56': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    '16uc9nqb': {
+      'en': '4. เดินไป-กลับ 20 ก้าว โดยไม่มีอุปกรณ์ข่วย',
+      'id': '',
+      'ms': '',
+    },
+    'wwi8x8ai': {
+      'en': '0 = ได้ 20 ก้าว',
+      'id': '',
+      'ms': '',
+    },
+    'j0c83ayf': {
+      'en': '1 = ได้ 10 ก้าว',
+      'id': '',
+      'ms': '',
+    },
+    '2izdnwgi': {
+      'en': '2 = ได้น้อยกว่า 10 ก้าว',
+      'id': '',
+      'ms': '',
+    },
+    'fscibzug': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'epv5sncc': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'kyx7qbz0': {
+      'en': '5. มีโรคประจำตัวน้อยกว่า 4 โรค',
+      'id': '',
+      'ms': '',
+    },
+    'onkywbx4': {
+      'en': '0 = 0-3 โรค',
+      'id': '',
+      'ms': '',
+    },
+    'nog1281u': {
+      'en': '1 = 4-6 โรค',
+      'id': '',
+      'ms': '',
+    },
+    'e302w8qs': {
+      'en': '2 = 7 โรคขึ้นไป',
+      'id': '',
+      'ms': '',
+    },
+    '4diao26a': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'e0zu866h': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'sxzubzrh': {
+      'en': '6. มีน้ำหนักลดหรือเพิ่มมากกว่าหรือเท่ากับ 5% ใน 1 ปี',
+      'id': '',
+      'ms': '',
+    },
+    'x96yy5d6': {
+      'en': '0 = น้ำหนักคงที่',
+      'id': '',
+      'ms': '',
+    },
+    'mfozccg9': {
+      'en': '1 = ลด หรือ เพิ่ม 0-4%',
+      'id': '',
+      'ms': '',
+    },
+    '8grrrumg': {
+      'en': '2 = ลด หรือ เพิ่ม 5% ขึ้นไป',
+      'id': '',
+      'ms': '',
+    },
+    'pbuupukm': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    '1dphbdnt': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    '8xsv4i6a': {
+      'en': '7. มีความคิดเบื่อหน่าย ท้อใจ ว้าเหว่ อยากมีเพื่อนในสัปดาห์ก่อน',
+      'id': '',
+      'ms': '',
+    },
+    'rojlzck0': {
+      'en': '0 = ไม่มีเลย',
+      'id': '',
+      'ms': '',
+    },
+    'is48kx7e': {
+      'en': '1 = มีบ้าง',
+      'id': '',
+      'ms': '',
+    },
+    '2742lpou': {
+      'en': '2 = บ่อยครั้ง',
+      'id': '',
+      'ms': '',
+    },
+    '84kpzj94': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'zfbo5r5w': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'pa7xlm9p': {
+      'en': '8. มีความคิดฆ่าตัวตายในเดือนที่ผ่านมา',
+      'id': '',
+      'ms': '',
+    },
+    '3cucdezk': {
+      'en': '0 = ไม่มีเลย',
+      'id': '',
+      'ms': '',
+    },
+    'n02d6kma': {
+      'en': '1 = มีบ้าง',
+      'id': '',
+      'ms': '',
+    },
+    'rwarbkta': {
+      'en': '2 = บ่อยครั้ง',
+      'id': '',
+      'ms': '',
+    },
+    'oflmdang': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'alb2zzwz': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'sh57gqgv': {
+      'en': 'รวม',
+      'id': '',
+      'ms': '',
+    },
+    'ir5wuvey': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'fti0wktm': {
+      'en': 'ข้อสังเกต / ความคิดเห็นอื่นๆ ',
+      'id': '',
+      'ms': '',
+    },
+    'vlywvoi8': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'p54rzz5n': {
+      'en': 'Home',
+      'id': 'Rumah',
+      'ms': 'Rumah',
+    },
+  },
+  // userEditDetail
+  {
+    'k6wl4qrj': {
+      'en': 'อัพโหลดรูป',
+      'id': '',
+      'ms': '',
+    },
+    'ctjbpa5h': {
+      'en': 'เลขบัตรประชาชน...',
+      'id': '',
+      'ms': '',
+    },
+    'hvq6zmz2': {
+      'en': 'เลขบัตรประชาชน',
+      'id': '',
+      'ms': '',
+    },
+    'dhlwso0a': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    '32oqg688': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'h5t7pg0j': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'mrjp52xv': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    '507qoh47': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'yues8ywo': {
+      'en': 'เพศ',
+      'id': '',
+      'ms': '',
+    },
+    'a953pmlz': {
+      'en': 'ชาย',
+      'id': '',
+      'ms': '',
+    },
+    'frv0ykaf': {
+      'en': 'หญิง',
+      'id': '',
+      'ms': '',
+    },
+    'xw6ke3z5': {
+      'en': 'Option 1',
+      'id': '',
+      'ms': '',
+    },
+    'onppcq2g': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'oylndh10': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'sy2sil8x': {
+      'en': 'ยกเลิก',
+      'id': 'Hasilkan Penawaran',
+      'ms': 'Hasilkan Petikan',
+    },
+    'w9b8gsdk': {
+      'en': 'บันทึก',
+      'id': 'Lihat Perusahaan',
+      'ms': 'Lihat Syarikat',
+    },
+    's3snedm8': {
       'en': 'Home',
       'id': 'Rumah',
       'ms': 'Rumah',
@@ -2944,6 +2994,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Rumah',
     },
   },
+  // MultiplePlacesPicker
+  {
+    'rmadcsfh': {
+      'en': 'Locations',
+      'id': '',
+      'ms': '',
+    },
+    'y2rfc1zx': {
+      'en': 'Home',
+      'id': '',
+      'ms': '',
+    },
+  },
   // modal_success
   {
     'kred63vb': {
@@ -3200,6 +3263,59 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     'sr54fsk6': {
+      'en': 'Save Changes',
+      'id': '',
+      'ms': '',
+    },
+  },
+  // MapSelect
+  {
+    'c6yfux27': {
+      'en': 'Change Photo',
+      'id': '',
+      'ms': '',
+    },
+    'obag4oik': {
+      'en':
+          'Upload a new photo below in order to change your avatar seen by others.',
+      'id': '',
+      'ms': '',
+    },
+    '1yz7pjsq': {
+      'en': 'Upload Image',
+      'id': '',
+      'ms': '',
+    },
+    '4netni55': {
+      'en': 'Save Changes',
+      'id': '',
+      'ms': '',
+    },
+  },
+  // mapSelect2
+  {
+    'x6qshrms': {
+      'en': 'Locations',
+      'id': '',
+      'ms': '',
+    },
+    '9ohg22g0': {
+      'en': 'Change Photo',
+      'id': '',
+      'ms': '',
+    },
+    'jzoi9w78': {
+      'en':
+          'Upload a new photo below in order to change your avatar seen by others.',
+      'id': '',
+      'ms': '',
+    },
+    'b9ieut9k': {
+      'en': 'Upload Image',
+      'id': '',
+      'ms': '',
+    },
+    '90ljl2f8': {
       'en': 'Save Changes',
       'id': '',
       'ms': '',

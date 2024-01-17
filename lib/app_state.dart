@@ -22,6 +22,9 @@ class FFAppState extends ChangeNotifier {
       _username = prefs.getString('ff_username') ?? _username;
     });
     _safeInit(() {
+      _userid = prefs.getString('ff_userid') ?? _userid;
+    });
+    _safeInit(() {
       _constreg = prefs
               .getStringList('ff_constreg')
               ?.map((x) {
@@ -47,6 +50,25 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    _safeInit(() {
+      _statuAddPageOfPerson =
+          prefs.getString('ff_statuAddPageOfPerson') ?? _statuAddPageOfPerson;
+    });
+    _safeInit(() {
+      _personAdd2 = prefs
+              .getStringList('ff_personAdd2')
+              ?.map((x) {
+                try {
+                  return PageAddStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _personAdd2;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -67,6 +89,7 @@ class FFAppState extends ChangeNotifier {
   String get userid => _userid;
   set userid(String value) {
     _userid = value;
+    prefs.setString('ff_userid', value);
   }
 
   List<EmployeeStruct> _employeelist = [
@@ -165,6 +188,54 @@ class FFAppState extends ChangeNotifier {
   void updatePersonAddStruct(Function(PageAddStruct) updateFn) {
     updateFn(_personAdd);
     prefs.setString('ff_personAdd', _personAdd.serialize());
+  }
+
+  String _statuAddPageOfPerson = '';
+  String get statuAddPageOfPerson => _statuAddPageOfPerson;
+  set statuAddPageOfPerson(String value) {
+    _statuAddPageOfPerson = value;
+    prefs.setString('ff_statuAddPageOfPerson', value);
+  }
+
+  List<PageAddStruct> _personAdd2 = [];
+  List<PageAddStruct> get personAdd2 => _personAdd2;
+  set personAdd2(List<PageAddStruct> value) {
+    _personAdd2 = value;
+    prefs.setStringList(
+        'ff_personAdd2', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToPersonAdd2(PageAddStruct value) {
+    _personAdd2.add(value);
+    prefs.setStringList(
+        'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromPersonAdd2(PageAddStruct value) {
+    _personAdd2.remove(value);
+    prefs.setStringList(
+        'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromPersonAdd2(int index) {
+    _personAdd2.removeAt(index);
+    prefs.setStringList(
+        'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
+  }
+
+  void updatePersonAdd2AtIndex(
+    int index,
+    PageAddStruct Function(PageAddStruct) updateFn,
+  ) {
+    _personAdd2[index] = updateFn(_personAdd2[index]);
+    prefs.setStringList(
+        'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInPersonAdd2(int index, PageAddStruct value) {
+    _personAdd2.insert(index, value);
+    prefs.setStringList(
+        'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
   }
 }
 

@@ -10,9 +10,15 @@ class PageAddStruct extends FFFirebaseStruct {
   PageAddStruct({
     String? pid,
     String? perid,
+    String? nme,
+    String? surnme,
+    String? type,
     FirestoreUtilData firestoreUtilData = const FirestoreUtilData(),
   })  : _pid = pid,
         _perid = perid,
+        _nme = nme,
+        _surnme = surnme,
+        _type = type,
         super(firestoreUtilData);
 
   // "pid" field.
@@ -27,9 +33,30 @@ class PageAddStruct extends FFFirebaseStruct {
   set perid(String? val) => _perid = val;
   bool hasPerid() => _perid != null;
 
+  // "nme" field.
+  String? _nme;
+  String get nme => _nme ?? '';
+  set nme(String? val) => _nme = val;
+  bool hasNme() => _nme != null;
+
+  // "surnme" field.
+  String? _surnme;
+  String get surnme => _surnme ?? '';
+  set surnme(String? val) => _surnme = val;
+  bool hasSurnme() => _surnme != null;
+
+  // "type" field.
+  String? _type;
+  String get type => _type ?? '';
+  set type(String? val) => _type = val;
+  bool hasType() => _type != null;
+
   static PageAddStruct fromMap(Map<String, dynamic> data) => PageAddStruct(
         pid: data['pid'] as String?,
         perid: data['perid'] as String?,
+        nme: data['nme'] as String?,
+        surnme: data['surnme'] as String?,
+        type: data['type'] as String?,
       );
 
   static PageAddStruct? maybeFromMap(dynamic data) =>
@@ -38,6 +65,9 @@ class PageAddStruct extends FFFirebaseStruct {
   Map<String, dynamic> toMap() => {
         'pid': _pid,
         'perid': _perid,
+        'nme': _nme,
+        'surnme': _surnme,
+        'type': _type,
       }.withoutNulls;
 
   @override
@@ -48,6 +78,18 @@ class PageAddStruct extends FFFirebaseStruct {
         ),
         'perid': serializeParam(
           _perid,
+          ParamType.String,
+        ),
+        'nme': serializeParam(
+          _nme,
+          ParamType.String,
+        ),
+        'surnme': serializeParam(
+          _surnme,
+          ParamType.String,
+        ),
+        'type': serializeParam(
+          _type,
           ParamType.String,
         ),
       }.withoutNulls;
@@ -64,6 +106,21 @@ class PageAddStruct extends FFFirebaseStruct {
           ParamType.String,
           false,
         ),
+        nme: deserializeParam(
+          data['nme'],
+          ParamType.String,
+          false,
+        ),
+        surnme: deserializeParam(
+          data['surnme'],
+          ParamType.String,
+          false,
+        ),
+        type: deserializeParam(
+          data['type'],
+          ParamType.String,
+          false,
+        ),
       );
 
   @override
@@ -71,16 +128,25 @@ class PageAddStruct extends FFFirebaseStruct {
 
   @override
   bool operator ==(Object other) {
-    return other is PageAddStruct && pid == other.pid && perid == other.perid;
+    return other is PageAddStruct &&
+        pid == other.pid &&
+        perid == other.perid &&
+        nme == other.nme &&
+        surnme == other.surnme &&
+        type == other.type;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([pid, perid]);
+  int get hashCode =>
+      const ListEquality().hash([pid, perid, nme, surnme, type]);
 }
 
 PageAddStruct createPageAddStruct({
   String? pid,
   String? perid,
+  String? nme,
+  String? surnme,
+  String? type,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -89,6 +155,9 @@ PageAddStruct createPageAddStruct({
     PageAddStruct(
       pid: pid,
       perid: perid,
+      nme: nme,
+      surnme: surnme,
+      type: type,
       firestoreUtilData: FirestoreUtilData(
         clearUnsetFields: clearUnsetFields,
         create: create,

@@ -242,7 +242,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: FutureBuilder<ApiCallResponse>(
-                      future: GetPersonByPidCall.call(
+                      future: GetPersonByPidCopyCall.call(
                         pid: _model.textController.text,
                       ),
                       builder: (context, snapshot) {
@@ -260,11 +260,12 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                             ),
                           );
                         }
-                        final listViewGetPersonByPidResponse = snapshot.data!;
+                        final listViewGetPersonByPidCopyResponse =
+                            snapshot.data!;
                         return Builder(
                           builder: (context) {
-                            final dataItem = GetPersonByPidCall.personData(
-                                  listViewGetPersonByPidResponse.jsonBody,
+                            final dataItem = GetPersonByPidCopyCall.personData(
+                                  listViewGetPersonByPidCopyResponse.jsonBody,
                                 )?.toList() ??
                                 [];
                             return ListView.builder(
@@ -361,31 +362,47 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                             ),
                                                             'name':
                                                                 serializeParam(
-                                                              getJsonField(
-                                                                dataItemItem,
-                                                                r'''$.nme''',
-                                                              ).toString(),
+                                                              GetPersonByPidCopyCall
+                                                                  .nameByPid(
+                                                                listViewGetPersonByPidCopyResponse
+                                                                    .jsonBody,
+                                                              ),
                                                               ParamType.String,
                                                             ),
                                                             'lastname':
                                                                 serializeParam(
-                                                              '',
+                                                              GetPersonByPidCopyCall
+                                                                  .lastName(
+                                                                listViewGetPersonByPidCopyResponse
+                                                                    .jsonBody,
+                                                              ),
                                                               ParamType.String,
                                                             ),
                                                             'birthDate':
                                                                 serializeParam(
-                                                              getJsonField(
-                                                                dataItemItem,
-                                                                r'''$.birthdate''',
-                                                              ).toString(),
+                                                              GetPersonByPidCopyCall
+                                                                  .birthdate(
+                                                                listViewGetPersonByPidCopyResponse
+                                                                    .jsonBody,
+                                                              ),
                                                               ParamType.String,
                                                             ),
                                                             'perid':
                                                                 serializeParam(
-                                                              getJsonField(
-                                                                dataItemItem,
-                                                                r'''$.perid''',
-                                                              ).toString(),
+                                                              GetPersonByPidCopyCall
+                                                                  .perid(
+                                                                listViewGetPersonByPidCopyResponse
+                                                                    .jsonBody,
+                                                              ),
+                                                              ParamType.String,
+                                                            ),
+                                                            'status':
+                                                                serializeParam(
+                                                              GetPersonByPidCopyCall
+                                                                  .status(
+                                                                listViewGetPersonByPidCopyResponse
+                                                                    .jsonBody,
+                                                              ),
                                                               ParamType.String,
                                                             ),
                                                           }.withoutNulls,

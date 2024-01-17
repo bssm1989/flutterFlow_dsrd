@@ -103,18 +103,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const HomeWidget(),
             ),
             FFRoute(
-              name: 'Main_customerList',
-              path: 'mainCustomerList',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'Main_customerList')
-                  : const MainCustomerListWidget(),
-            ),
-            FFRoute(
               name: 'Main_Contracts',
               path: 'mainContracts',
               builder: (context, params) => params.isEmpty
                   ? const NavBarPage(initialPage: 'Main_Contracts')
                   : const MainContractsWidget(),
+            ),
+            FFRoute(
+              name: 'Main_customerList',
+              path: 'mainCustomerList',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'Main_customerList')
+                  : const MainCustomerListWidget(),
             ),
             FFRoute(
               name: 'Main_profilePage',
@@ -166,16 +166,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const UserWidget(),
             ),
             FFRoute(
-              name: 'userEditDetail',
-              path: 'userEditDetail',
-              builder: (context, params) => const UserEditDetailWidget(),
-            ),
-            FFRoute(
-              name: 'Evaluation-Form',
-              path: 'evaluationForm',
-              builder: (context, params) => const EvaluationFormWidget(),
-            ),
-            FFRoute(
               name: 'userEditDetailCopy',
               path: 'userEditDetailCopy',
               builder: (context, params) => UserEditDetailCopyWidget(
@@ -184,7 +174,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 lastname: params.getParam('lastname', ParamType.String),
                 birthDate: params.getParam('birthDate', ParamType.String),
                 perid: params.getParam('perid', ParamType.String),
+                status: params.getParam('status', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'Evaluation-Form',
+              path: 'evaluationForm',
+              builder: (context, params) => const EvaluationFormWidget(),
+            ),
+            FFRoute(
+              name: 'userEditDetail',
+              path: 'userEditDetail',
+              builder: (context, params) => const UserEditDetailWidget(),
             ),
             FFRoute(
               name: 'Evaluation-Form2Copy',
@@ -197,6 +198,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'Signup',
               path: 'Signup',
               builder: (context, params) => const SignupWidget(),
+            ),
+            FFRoute(
+              name: 'MultiplePlacesPicker',
+              path: 'multiplePlacesPicker',
+              builder: (context, params) => const MultiplePlacesPickerWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
