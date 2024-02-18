@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +14,7 @@ class MultiplePlacesPickerWidget extends StatefulWidget {
   const MultiplePlacesPickerWidget({super.key});
 
   @override
-  _MultiplePlacesPickerWidgetState createState() =>
+  State<MultiplePlacesPickerWidget> createState() =>
       _MultiplePlacesPickerWidgetState();
 }
 
@@ -60,10 +61,9 @@ class _MultiplePlacesPickerWidgetState
           child: SizedBox(
             width: 50.0,
             height: 50.0,
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                FlutterFlowTheme.of(context).primary,
-              ),
+            child: SpinKitChasingDots(
+              color: FlutterFlowTheme.of(context).tertiary400,
+              size: 50.0,
             ),
           ),
         ),
@@ -108,24 +108,27 @@ class _MultiplePlacesPickerWidgetState
                           ),
                           child: Stack(
                             children: [
-                              FlutterFlowGoogleMap(
-                                controller: _model.googleMapsController,
-                                onCameraIdle: (latLng) => setState(
-                                    () => _model.googleMapsCenter = latLng),
-                                initialLocation: _model.googleMapsCenter ??=
-                                    currentUserLocationValue!,
-                                markerColor: GoogleMarkerColor.violet,
-                                mapType: MapType.normal,
-                                style: GoogleMapStyle.standard,
-                                initialZoom: 14.0,
-                                allowInteraction: true,
-                                allowZoom: true,
-                                showZoomControls: false,
-                                showLocation: true,
-                                showCompass: false,
-                                showMapToolbar: true,
-                                showTraffic: false,
-                                centerMapOnMarkerTap: true,
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: FlutterFlowGoogleMap(
+                                  controller: _model.googleMapsController,
+                                  onCameraIdle: (latLng) => setState(
+                                      () => _model.googleMapsCenter = latLng),
+                                  initialLocation: _model.googleMapsCenter ??=
+                                      currentUserLocationValue!,
+                                  markerColor: GoogleMarkerColor.violet,
+                                  mapType: MapType.normal,
+                                  style: GoogleMapStyle.standard,
+                                  initialZoom: 14.0,
+                                  allowInteraction: true,
+                                  allowZoom: true,
+                                  showZoomControls: false,
+                                  showLocation: true,
+                                  showCompass: false,
+                                  showMapToolbar: true,
+                                  showTraffic: false,
+                                  centerMapOnMarkerTap: true,
+                                ),
                               ),
                               Align(
                                 alignment: const AlignmentDirectional(0.0, -0.05),

@@ -13,7 +13,7 @@ class UserWidget extends StatefulWidget {
   const UserWidget({super.key});
 
   @override
-  _UserWidgetState createState() => _UserWidgetState();
+  State<UserWidget> createState() => _UserWidgetState();
 }
 
 class _UserWidgetState extends State<UserWidget> {

@@ -106,59 +106,6 @@ Locale createLocale(String language) => language.contains('_')
     : Locale(language);
 
 final kTranslationsMap = <Map<String, Map<String, String>>>[
-  // Login
-  {
-    '3p97u62u': {
-      'en': 'ยินดีต้อนรับ สู่ระบบ DSRD',
-      'id': 'Selamat Datang kembali!',
-      'ms': 'Selamat kembali!',
-    },
-    'xkz4xjo6': {
-      'en': 'กรุณากรอกข้อมูลเข้าสู่ระบบ',
-      'id': 'Gunakan formulir di bawah ini untuk mengakses akun Anda.',
-      'ms': 'Gunakan borang di bawah untuk mengakses akaun anda.',
-    },
-    'k9u5spqi': {
-      'en': 'User',
-      'id': 'Alamat email',
-      'ms': 'Alamat emel',
-    },
-    'f4xxyrqv': {
-      'en': 'กรอก user...',
-      'id': 'Masukkan email Anda disini...',
-      'ms': 'Masukkan e-mel anda di sini...',
-    },
-    'lfzvgi5q': {
-      'en': 'รหัสผ่าน',
-      'id': 'Kata sandi',
-      'ms': 'Kata laluan',
-    },
-    'wt8sx5du': {
-      'en': 'กรอกรหัสผ่านที่นี้...',
-      'id': 'Masukkan kata sandi Anda di sini...',
-      'ms': 'Masukkan kata laluan anda di sini...',
-    },
-    'm9klj9ah': {
-      'en': 'เข้าสู่ระบบ',
-      'id': 'Gabung',
-      'ms': 'Log masuk',
-    },
-    'rih94ily': {
-      'en': 'ลงทะเบียน',
-      'id': 'Gabung',
-      'ms': 'Log masuk',
-    },
-    'ivhc1wf0': {
-      'en': 'ลงทะเบียน',
-      'id': 'Gabung',
-      'ms': 'Log masuk',
-    },
-    'iha5socs': {
-      'en': 'Home',
-      'id': 'Rumah',
-      'ms': 'Rumah',
-    },
-  },
   // createAccount
   {
     'l2xxy1gf': {
@@ -258,6 +205,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Hantar Pautan Tetapan Semula',
     },
     '8p6xd6cl': {
+      'en': 'Home',
+      'id': 'Rumah',
+      'ms': 'Rumah',
+    },
+  },
+  // Login
+  {
+    '3p97u62u': {
+      'en': 'ยินดีต้อนรับ สู่ระบบ DSRD',
+      'id': 'Selamat Datang kembali!',
+      'ms': 'Selamat kembali!',
+    },
+    'xkz4xjo6': {
+      'en': 'กรุณากรอกข้อมูลเข้าสู่ระบบ',
+      'id': 'Gunakan formulir di bawah ini untuk mengakses akun Anda.',
+      'ms': 'Gunakan borang di bawah untuk mengakses akaun anda.',
+    },
+    'k9u5spqi': {
+      'en': 'User',
+      'id': 'Alamat email',
+      'ms': 'Alamat emel',
+    },
+    'f4xxyrqv': {
+      'en': 'กรอก user...',
+      'id': 'Masukkan email Anda disini...',
+      'ms': 'Masukkan e-mel anda di sini...',
+    },
+    'lfzvgi5q': {
+      'en': 'รหัสผ่าน',
+      'id': 'Kata sandi',
+      'ms': 'Kata laluan',
+    },
+    'wt8sx5du': {
+      'en': 'กรอกรหัสผ่านที่นี้...',
+      'id': 'Masukkan kata sandi Anda di sini...',
+      'ms': 'Masukkan kata laluan anda di sini...',
+    },
+    'm9klj9ah': {
+      'en': 'เข้าสู่ระบบ',
+      'id': 'Gabung',
+      'ms': 'Log masuk',
+    },
+    'rih94ily': {
+      'en': 'ลงทะเบียน',
+      'id': 'Gabung',
+      'ms': 'Log masuk',
+    },
+    'iha5socs': {
       'en': 'Home',
       'id': 'Rumah',
       'ms': 'Rumah',
@@ -449,224 +444,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Sedang Berlangsung',
     },
     'j08eiorc': {
-      'en': '__',
-      'id': '__',
-      'ms': '__',
-    },
-  },
-  // Main_customerList
-  {
-    'n99lg1qh': {
-      'en': 'กลุ่มเปราะบาง',
-      'id': 'Pelanggan',
-      'ms': 'Pelanggan',
-    },
-    'lvnskphp': {
-      'en': 'ทั้งหมด',
-      'id': 'Semua',
-      'ms': 'Semua',
-    },
-    'a258xeav': {
-      'en': 'Randy Alcorn',
-      'id': 'Randy Alcorn',
-      'ms': 'Randy Alcorn',
-    },
-    'wduyui67': {
-      'en': 'Head of Procurement',
-      'id': 'Kepala Pengadaan',
-      'ms': 'Ketua Perolehan',
-    },
-    'riw99ssl': {
-      'en': 'คนพิการ',
-      'id': 'ACME Co.',
-      'ms': 'ACME Co.',
-    },
-    'u0su8kte': {
-      'en': 'James Wiseman',
-      'id': 'James Wiseman',
-      'ms': 'James Wiseman',
-    },
-    'nyfsg4hw': {
-      'en': 'Account Manager',
-      'id': 'Manajer Akuntansi',
-      'ms': 'Pengurus akaun',
-    },
-    'gzwu4cjr': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'ACME Co.',
-      'ms': 'ACME Co.',
-    },
-    'v1ffzm93': {
-      'en': 'Ignacious Rodriguez',
-      'id': 'Rodriguez yang kejam',
-      'ms': 'Ignacious Rodriguez',
-    },
-    '8jo402mn': {
-      'en': 'Sales Manager',
-      'id': 'Manajer penjualan',
-      'ms': 'Pengurus jualan',
-    },
-    'r658c9dm': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'Robin HQ',
-      'ms': 'Robin HQ',
-    },
-    'l5cpbw6i': {
-      'en': 'Elena Williams',
-      'id': 'Elena Williams',
-      'ms': 'Elena Williams',
-    },
-    '9ico69uv': {
-      'en': 'Head of Product & Innovation',
-      'id': 'Kepala Produk &amp; Inovasi',
-      'ms': 'Ketua Produk &amp; Inovasi',
-    },
-    'i1898004': {
-      'en': 'Robin HQ',
-      'id': 'Robin HQ',
-      'ms': 'Robin HQ',
-    },
-    's8kuamom': {
-      'en': 'Greg Brown',
-      'id': 'Greg Brown',
-      'ms': 'Greg Brown',
-    },
-    'uu60i528': {
-      'en': 'Account Manager',
-      'id': 'Manajer Akuntansi',
-      'ms': 'Pengurus akaun',
-    },
-    '6nuzim8s': {
-      'en': 'Robin HQ',
-      'id': 'Robin HQ',
-      'ms': 'Robin HQ',
-    },
-    'lwflemu4': {
-      'en': 'June Williamson',
-      'id': 'Juni Williamson',
-      'ms': 'June Williamson',
-    },
-    'rxejb1ds': {
-      'en': 'Sr. Account Manager',
-      'id': 'Manajer Akun Senior',
-      'ms': 'Tuan Pengurus Akaun',
-    },
-    'k5yutyp7': {
-      'en': 'HealthAi',
-      'id': 'KesehatanAi',
-      'ms': 'KesihatanAi',
-    },
-    'z6bqikmn': {
-      'en': 'June Williamson',
-      'id': 'Juni Williamson',
-      'ms': 'June Williamson',
-    },
-    'rm4hba82': {
-      'en': 'Sr. Account Manager',
-      'id': 'Manajer Akun Senior',
-      'ms': 'Tuan Pengurus Akaun',
-    },
-    'id05iiyh': {
-      'en': 'HealthAi',
-      'id': 'KesehatanAi',
-      'ms': 'KesihatanAi',
-    },
-    'qh2ock0d': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'Aktif',
-      'ms': 'Aktif',
-    },
-    'evmi1fjb': {
-      'en': 'June Williamson',
-      'id': 'Juni Williamson',
-      'ms': 'June Williamson',
-    },
-    '7t7dfs7b': {
-      'en': 'Sr. Account Manager',
-      'id': 'Manajer Akun Senior',
-      'ms': 'Tuan Pengurus Akaun',
-    },
-    'rv0grt5f': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'KesehatanAi',
-      'ms': 'KesihatanAi',
-    },
-    '1c1n7s8k': {
-      'en': 'James Wiseman',
-      'id': 'James Wiseman',
-      'ms': 'James Wiseman',
-    },
-    '13p4ybb4': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'Manajer Akuntansi',
-      'ms': 'Pengurus akaun',
-    },
-    'y7tux8cs': {
-      'en': 'ผู้สูงอายุ',
-      'id': 'KesehatanAi',
-      'ms': 'KesihatanAi',
-    },
-    's7xebw09': {
-      'en': 'คนพิการ',
-      'id': 'Panggilan Dingin',
-      'ms': 'Panggilan Dingin',
-    },
-    'xaq75cfo': {
-      'en': 'Randy Alcorn',
-      'id': 'Randy Alcorn',
-      'ms': 'Randy Alcorn',
-    },
-    '3hsvv2b4': {
-      'en': 'Head of Procurement',
-      'id': 'Kepala Pengadaan',
-      'ms': 'Ketua Perolehan',
-    },
-    '8df6l0nu': {
-      'en': 'ACME Co.',
-      'id': 'ACME Co.',
-      'ms': 'ACME Co.',
-    },
-    '1azw03n0': {
-      'en': 'Elena Williams',
-      'id': 'Elena Williams',
-      'ms': 'Elena Williams',
-    },
-    '4i0nlpng': {
-      'en': 'Head of Product & Innovation',
-      'id': 'Kepala Produk &amp; Inovasi',
-      'ms': 'Ketua Produk &amp; Inovasi',
-    },
-    'k60lznjm': {
-      'en': 'Robin HQ',
-      'id': 'Robin HQ',
-      'ms': 'Robin HQ',
-    },
-    'qbof0y3o': {
-      'en': 'เด็กกำพร้า/เด็กด้อยโอกาส',
-      'id': '',
-      'ms': '',
-    },
-    'atd3lpf8': {
-      'en': 'Tab View 4',
-      'id': '',
-      'ms': '',
-    },
-    '2dhwatij': {
-      'en': 'หญิงหม้าย',
-      'id': '',
-      'ms': '',
-    },
-    'ig2mwif8': {
-      'en': 'Tab View 5',
-      'id': '',
-      'ms': '',
-    },
-    'fcyoodds': {
-      'en': 'Customers',
-      'id': 'Pelanggan',
-      'ms': 'Pelanggan',
-    },
-    '3ourv2w9': {
       'en': '__',
       'id': '__',
       'ms': '__',
@@ -873,6 +650,154 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '__',
     },
   },
+  // Main_customerList
+  {
+    'n99lg1qh': {
+      'en': 'กลุ่มเปราะบาง',
+      'id': 'Pelanggan',
+      'ms': 'Pelanggan',
+    },
+    'lvnskphp': {
+      'en': '',
+      'id': 'Semua',
+      'ms': 'Semua',
+    },
+    'u0su8kte': {
+      'en': 'James Wiseman',
+      'id': 'James Wiseman',
+      'ms': 'James Wiseman',
+    },
+    'nyfsg4hw': {
+      'en': 'Account Manager',
+      'id': 'Manajer Akuntansi',
+      'ms': 'Pengurus akaun',
+    },
+    'gzwu4cjr': {
+      'en': 'ผู้สูงอายุ',
+      'id': 'ACME Co.',
+      'ms': 'ACME Co.',
+    },
+    'v1ffzm93': {
+      'en': 'Ignacious Rodriguez',
+      'id': 'Rodriguez yang kejam',
+      'ms': 'Ignacious Rodriguez',
+    },
+    '8jo402mn': {
+      'en': 'Sales Manager',
+      'id': 'Manajer penjualan',
+      'ms': 'Pengurus jualan',
+    },
+    'r658c9dm': {
+      'en': 'ผู้สูงอายุ',
+      'id': 'Robin HQ',
+      'ms': 'Robin HQ',
+    },
+    'l5cpbw6i': {
+      'en': 'Elena Williams',
+      'id': 'Elena Williams',
+      'ms': 'Elena Williams',
+    },
+    '9ico69uv': {
+      'en': 'Head of Product & Innovation',
+      'id': 'Kepala Produk &amp; Inovasi',
+      'ms': 'Ketua Produk &amp; Inovasi',
+    },
+    'i1898004': {
+      'en': 'Robin HQ',
+      'id': 'Robin HQ',
+      'ms': 'Robin HQ',
+    },
+    's8kuamom': {
+      'en': 'Greg Brown',
+      'id': 'Greg Brown',
+      'ms': 'Greg Brown',
+    },
+    'uu60i528': {
+      'en': 'Account Manager',
+      'id': 'Manajer Akuntansi',
+      'ms': 'Pengurus akaun',
+    },
+    '6nuzim8s': {
+      'en': 'Robin HQ',
+      'id': 'Robin HQ',
+      'ms': 'Robin HQ',
+    },
+    'lwflemu4': {
+      'en': 'June Williamson',
+      'id': 'Juni Williamson',
+      'ms': 'June Williamson',
+    },
+    'rxejb1ds': {
+      'en': 'Sr. Account Manager',
+      'id': 'Manajer Akun Senior',
+      'ms': 'Tuan Pengurus Akaun',
+    },
+    'k5yutyp7': {
+      'en': 'HealthAi',
+      'id': 'KesehatanAi',
+      'ms': 'KesihatanAi',
+    },
+    'z6bqikmn': {
+      'en': 'June Williamson',
+      'id': 'Juni Williamson',
+      'ms': 'June Williamson',
+    },
+    'rm4hba82': {
+      'en': 'Sr. Account Manager',
+      'id': 'Manajer Akun Senior',
+      'ms': 'Tuan Pengurus Akaun',
+    },
+    'id05iiyh': {
+      'en': 'HealthAi',
+      'id': 'KesehatanAi',
+      'ms': 'KesihatanAi',
+    },
+    'qh2ock0d': {
+      'en': '',
+      'id': 'Aktif',
+      'ms': 'Aktif',
+    },
+    '1c1n7s8k': {
+      'en': 'James Wiseman',
+      'id': 'James Wiseman',
+      'ms': 'James Wiseman',
+    },
+    '13p4ybb4': {
+      'en': 'ผู้สูงอายุ',
+      'id': 'Manajer Akuntansi',
+      'ms': 'Pengurus akaun',
+    },
+    'y7tux8cs': {
+      'en': 'ผู้สูงอายุ',
+      'id': 'KesehatanAi',
+      'ms': 'KesihatanAi',
+    },
+    's7xebw09': {
+      'en': '',
+      'id': 'Panggilan Dingin',
+      'ms': 'Panggilan Dingin',
+    },
+    'qbof0y3o': {
+      'en': '',
+      'id': '',
+      'ms': '',
+    },
+    '2dhwatij': {
+      'en': '',
+      'id': '',
+      'ms': '',
+    },
+    'fcyoodds': {
+      'en': 'Customers',
+      'id': 'Pelanggan',
+      'ms': 'Pelanggan',
+    },
+    '3ourv2w9': {
+      'en': '__',
+      'id': '__',
+      'ms': '__',
+    },
+  },
   // editProfile
   {
     'mk8nnw94': {
@@ -904,100 +829,34 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // userDetails
   {
     'obyrn1rb': {
-      'en': 'Customer Name',
+      'en': 'กลุ่มเปราะบาง',
       'id': 'Nama Pelanggan',
       'ms': 'Nama Pelanggan',
-    },
-    '00sam6zz': {
-      'en': 'Randy Alcorn',
-      'id': 'Randy Alcorn',
-      'ms': 'Randy Alcorn',
     },
     'nxuoeukv': {
       'en': 'High Profile',
       'id': 'Kalangan atas',
       'ms': 'Profil tinggi',
     },
-    'ecbeopja': {
-      'en': 'Title',
-      'id': 'Judul',
-      'ms': 'Tajuk',
-    },
-    'xf6clrz6': {
-      'en': 'Head of Procurement',
-      'id': 'Kepala Pengadaan',
-      'ms': 'Ketua Perolehan',
-    },
     'kl55bl1c': {
-      'en': 'Company',
+      'en': 'ที่อยู่',
       'id': 'Perusahaan',
       'ms': 'Syarikat',
     },
-    'nh9bkr5i': {
-      'en': 'ACME Co.',
-      'id': 'ACME Co.',
-      'ms': 'ACME Co.',
+    'ecbeopja': {
+      'en': 'วัน/เดือน/ปี เกิด',
+      'id': 'Judul',
+      'ms': 'Tajuk',
     },
     'dkyygm1d': {
-      'en': 'Notes',
+      'en': 'แบบสอบถาม',
       'id': 'Catatan',
       'ms': 'Nota',
     },
-    'p82rjlf3': {
-      'en': 'Alexandria Smith',
-      'id': 'Alexandria Smith',
-      'ms': 'Alexandria Smith',
-    },
-    '2s53b50t': {
-      'en': '1m ago',
-      'id': '1 menit yang lalu',
-      'ms': '1m lalu',
-    },
-    'rnaiavvh': {
-      'en':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'id':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'ms':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboure et dolore magna aliqua. Untuk meminimumkan veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    },
-    'bujmmf46': {
-      'en': '8',
-      'id': '8',
-      'ms': '8',
-    },
-    'ntlrz0gk': {
-      'en': 'Notes',
-      'id': 'Catatan',
-      'ms': 'Nota',
-    },
-    'rw21s3dk': {
-      'en': 'Randy Alcorn',
-      'id': 'Randy Alcorn',
-      'ms': 'Randy Alcorn',
-    },
-    'mj096u71': {
-      'en':
-          'I\'m not really sure about this section here aI think you should do soemthing cool!',
-      'id':
-          'Saya tidak begitu yakin tentang bagian ini di sini saya pikir Anda harus melakukan sesuatu yang keren!',
-      'ms':
-          'Saya tidak begitu pasti tentang bahagian ini di sini kerana saya fikir anda perlu melakukan sesuatu yang menarik!',
-    },
-    '1n2y2xin': {
-      'en': 'a min ago',
-      'id': 'beberapa menit yang lalu',
-      'ms': 'min yang lalu',
-    },
-    'ojneuoau': {
-      'en': 'Generate Quote',
-      'id': 'Hasilkan Penawaran',
-      'ms': 'Hasilkan Petikan',
-    },
-    'suvzdvvk': {
-      'en': 'View Company',
-      'id': 'Lihat Perusahaan',
-      'ms': 'Lihat Syarikat',
+    '6e82iglb': {
+      'en': 'name@domain.com',
+      'id': '',
+      'ms': '',
     },
     '9t913b44': {
       'en': 'Home',
@@ -1259,6 +1118,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
+    'gvjezo1a': {
+      'en': '',
+      'id': '',
+      'ms': '',
+    },
     'wabref8m': {
       'en': 'ดช.',
       'id': '',
@@ -1285,7 +1149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     '73iurztx': {
-      'en': 'Please select...',
+      'en': 'เลือกคำนำหน้า...',
       'id': '',
       'ms': '',
     },
@@ -1599,77 +1463,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': '',
       'ms': '',
     },
-    'wj13moyz': {
-      'en': 'ไม่มีผู้ดูแล',
+    '9qh3e1gt': {
+      'en': 'จังหวัด',
       'id': '',
       'ms': '',
     },
-    '1b6wtuln': {
-      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
-      'id': '',
-      'ms': '',
-    },
-    'rbcxty6n': {
-      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
-      'id': '',
-      'ms': '',
-    },
-    '31u10ots': {
-      'en': 'ท่านมีผู้ดูแลหรือไม่',
-      'id': '',
-      'ms': '',
-    },
-    '3bjdfhx1': {
+    'begygtf2': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
     },
-    '9z5g8q9l': {
-      'en': 'ไม่มีผู้ดูแล',
+    'jup8dogj': {
+      'en': 'อำเภอ',
       'id': '',
       'ms': '',
     },
-    'dnv8w52a': {
-      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
-      'id': '',
-      'ms': '',
-    },
-    's5svcfh7': {
-      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
-      'id': '',
-      'ms': '',
-    },
-    'vful9bqr': {
-      'en': 'ท่านมีผู้ดูแลหรือไม่',
-      'id': '',
-      'ms': '',
-    },
-    'jzn93e6w': {
+    'ac3i7bb4': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
     },
-    'vpebqqt0': {
-      'en': 'ไม่มีผู้ดูแล',
+    '8w3xbhpa': {
+      'en': 'ตำบล',
       'id': '',
       'ms': '',
     },
-    'vgsah35p': {
-      'en': 'มีผู้ดูแล-สมาชิกในครอบครัว',
-      'id': '',
-      'ms': '',
-    },
-    '9nns60zj': {
-      'en': 'มีผู้ดูแล-จ้างคนนอกครอบครัวมาดูแล',
-      'id': '',
-      'ms': '',
-    },
-    'xkk6ey51': {
-      'en': 'ท่านมีผู้ดูแลหรือไม่',
-      'id': '',
-      'ms': '',
-    },
-    'e3m7jut1': {
+    'e19ur11x': {
       'en': 'Search for an item...',
       'id': '',
       'ms': '',
@@ -1681,11 +1500,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'p78za22k': {
       'en': 'ข้อมูลเชิงพื้นที่',
-      'id': '',
-      'ms': '',
-    },
-    'qt15ks9f': {
-      'en': 'พิกัดบ้าน ละติจูด',
       'id': '',
       'ms': '',
     },
@@ -2069,6 +1883,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'id': 'Lihat Perusahaan',
       'ms': 'Lihat Syarikat',
     },
+    '96zh04f5': {
+      'en': 'จังหวัด',
+      'id': '',
+      'ms': '',
+    },
+    'tw7ry97n': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
     'h65rhqrq': {
       'en': 'Home',
       'id': 'Rumah',
@@ -2077,11 +1901,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Evaluation-Form
   {
-    'u3mlty81': {
-      'en': 'อัพโหลดรูป',
-      'id': '',
-      'ms': '',
-    },
     'mrkfdnll': {
       'en': 'ข้อมูลแบบประเมินสุขภาวะผู้เปราะบาง',
       'id': '',
@@ -2366,109 +2185,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Rumah',
     },
   },
-  // userEditDetail
-  {
-    'k6wl4qrj': {
-      'en': 'อัพโหลดรูป',
-      'id': '',
-      'ms': '',
-    },
-    'ctjbpa5h': {
-      'en': 'เลขบัตรประชาชน...',
-      'id': '',
-      'ms': '',
-    },
-    'hvq6zmz2': {
-      'en': 'เลขบัตรประชาชน',
-      'id': '',
-      'ms': '',
-    },
-    'dhlwso0a': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    '32oqg688': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'h5t7pg0j': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'mrjp52xv': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    '507qoh47': {
-      'en': 'Label here...',
-      'id': '',
-      'ms': '',
-    },
-    'yues8ywo': {
-      'en': 'เพศ',
-      'id': '',
-      'ms': '',
-    },
-    'a953pmlz': {
-      'en': 'ชาย',
-      'id': '',
-      'ms': '',
-    },
-    'frv0ykaf': {
-      'en': 'หญิง',
-      'id': '',
-      'ms': '',
-    },
-    'xw6ke3z5': {
-      'en': 'Option 1',
-      'id': '',
-      'ms': '',
-    },
-    'onppcq2g': {
-      'en': 'Please select...',
-      'id': '',
-      'ms': '',
-    },
-    'oylndh10': {
-      'en': 'Search for an item...',
-      'id': '',
-      'ms': '',
-    },
-    'sy2sil8x': {
-      'en': 'ยกเลิก',
-      'id': 'Hasilkan Penawaran',
-      'ms': 'Hasilkan Petikan',
-    },
-    'w9b8gsdk': {
-      'en': 'บันทึก',
-      'id': 'Lihat Perusahaan',
-      'ms': 'Lihat Syarikat',
-    },
-    's3snedm8': {
-      'en': 'Home',
-      'id': 'Rumah',
-      'ms': 'Rumah',
-    },
-  },
   // Evaluation-Form2Copy
   {
-    '1dt4spo8': {
-      'en': 'อัพโหลดรูป',
-      'id': '',
-      'ms': '',
-    },
     'v3c0pmix': {
       'en': 'แบบติดตามสุขภาวะผู้เปราะบาง',
       'id': '',
       'ms': '',
     },
     '0jnb6dvt': {
-      'en':
-          'คำชี้แจง: แบบสำรวจนี้มีวัตถุประสงค์เพื่อสังเกตอาการในเบื้องต้น นำไปสู่การดูแลเอาใจใส่ต่อไป',
+      'en': 'คำชี้แจง: แบบสำรวจนี้มีวัตถุประสงค์เพื่อสังเกตอาการในเบื้องต้น ',
+      'id': '',
+      'ms': '',
+    },
+    'vj69v6ad': {
+      'en': 'คำชี้แจง: แบบสำรวจนี้มีวัตถุประสงค์เพื่อสังเกตอาการในเบื้องต้น ',
       'id': '',
       'ms': '',
     },
@@ -2911,6 +2641,94 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': 'Rumah',
     },
   },
+  // userEditDetail
+  {
+    'k6wl4qrj': {
+      'en': 'อัพโหลดรูป',
+      'id': '',
+      'ms': '',
+    },
+    'ctjbpa5h': {
+      'en': 'เลขบัตรประชาชน...',
+      'id': '',
+      'ms': '',
+    },
+    'hvq6zmz2': {
+      'en': 'เลขบัตรประชาชน',
+      'id': '',
+      'ms': '',
+    },
+    'dhlwso0a': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    '32oqg688': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'h5t7pg0j': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'mrjp52xv': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    '507qoh47': {
+      'en': 'Label here...',
+      'id': '',
+      'ms': '',
+    },
+    'yues8ywo': {
+      'en': 'เพศ',
+      'id': '',
+      'ms': '',
+    },
+    'a953pmlz': {
+      'en': 'ชาย',
+      'id': '',
+      'ms': '',
+    },
+    'frv0ykaf': {
+      'en': 'หญิง',
+      'id': '',
+      'ms': '',
+    },
+    'xw6ke3z5': {
+      'en': 'Option 1',
+      'id': '',
+      'ms': '',
+    },
+    'onppcq2g': {
+      'en': 'Please select...',
+      'id': '',
+      'ms': '',
+    },
+    'oylndh10': {
+      'en': 'Search for an item...',
+      'id': '',
+      'ms': '',
+    },
+    'sy2sil8x': {
+      'en': 'ยกเลิก',
+      'id': 'Hasilkan Penawaran',
+      'ms': 'Hasilkan Petikan',
+    },
+    'w9b8gsdk': {
+      'en': 'บันทึก',
+      'id': 'Lihat Perusahaan',
+      'ms': 'Lihat Syarikat',
+    },
+    's3snedm8': {
+      'en': 'Home',
+      'id': 'Rumah',
+      'ms': 'Rumah',
+    },
+  },
   // Signup
   {
     'f7t5hwdo': {
@@ -3294,29 +3112,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // mapSelect2
   {
-    'x6qshrms': {
-      'en': 'Locations',
-      'id': '',
-      'ms': '',
-    },
-    '9ohg22g0': {
-      'en': 'Change Photo',
-      'id': '',
-      'ms': '',
-    },
-    'jzoi9w78': {
-      'en':
-          'Upload a new photo below in order to change your avatar seen by others.',
-      'id': '',
-      'ms': '',
-    },
-    'b9ieut9k': {
-      'en': 'Upload Image',
-      'id': '',
-      'ms': '',
-    },
-    '90ljl2f8': {
-      'en': 'Save Changes',
+    'nf4jdcu5': {
+      'en': 'ตกลง',
       'id': '',
       'ms': '',
     },
@@ -3329,6 +3126,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ms': '',
     },
     'qu4aubrr': {
+      'en': '',
+      'id': '',
+      'ms': '',
+    },
+    'l4cfi6qf': {
       'en': '',
       'id': '',
       'ms': '',

@@ -15,7 +15,7 @@ class ProjectDetailsHealthAiWidget extends StatefulWidget {
   const ProjectDetailsHealthAiWidget({super.key});
 
   @override
-  _ProjectDetailsHealthAiWidgetState createState() =>
+  State<ProjectDetailsHealthAiWidget> createState() =>
       _ProjectDetailsHealthAiWidgetState();
 }
 

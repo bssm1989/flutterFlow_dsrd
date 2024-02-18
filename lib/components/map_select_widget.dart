@@ -11,7 +11,7 @@ class MapSelectWidget extends StatefulWidget {
   const MapSelectWidget({super.key});
 
   @override
-  _MapSelectWidgetState createState() => _MapSelectWidgetState();
+  State<MapSelectWidget> createState() => _MapSelectWidgetState();
 }
 
 class _MapSelectWidgetState extends State<MapSelectWidget> {
@@ -225,9 +225,7 @@ class _MapSelectWidgetState extends State<MapSelectWidget> {
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.normal,
                                         useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
+                                            .containsKey('Lexend Deca'),
                                       ),
                                   elevation: 2.0,
                                   borderSide: const BorderSide(

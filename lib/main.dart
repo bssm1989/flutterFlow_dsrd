@@ -99,11 +99,9 @@ class _MyAppState extends State<MyApp> {
       ],
       theme: ThemeData(
         brightness: Brightness.light,
-        scrollbarTheme: const ScrollbarThemeData(),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        scrollbarTheme: const ScrollbarThemeData(),
       ),
       themeMode: _themeMode,
       routerConfig: _router,
@@ -138,9 +136,9 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Home': const HomeWidget(),
       'Main_Contracts': const MainContractsWidget(),
-      'Main_customerList': const MainCustomerListWidget(),
       'Main_profilePage': const MainProfilePageWidget(),
       'myTeam': const MyTeamWidget(),
+      'Main_customerList': const MainCustomerListWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -195,20 +193,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             BottomNavigationBarItem(
               icon: const Icon(
-                Icons.supervised_user_circle_outlined,
-                size: 24.0,
-              ),
-              activeIcon: const Icon(
-                Icons.supervised_user_circle_sharp,
-                size: 32.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '3ourv2w9' /* __ */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(
                 Icons.account_circle_outlined,
                 size: 24.0,
               ),
@@ -232,6 +216,20 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 'smtxdnbn' /* __ */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.supervised_user_circle_outlined,
+                size: 24.0,
+              ),
+              activeIcon: const Icon(
+                Icons.supervised_user_circle_sharp,
+                size: 32.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                '3ourv2w9' /* __ */,
               ),
               tooltip: '',
             )

@@ -44,7 +44,7 @@ class WebNavWidget extends StatefulWidget {
   final Color? textFive;
 
   @override
-  _WebNavWidgetState createState() => _WebNavWidgetState();
+  State<WebNavWidget> createState() => _WebNavWidgetState();
 }
 
 class _WebNavWidgetState extends State<WebNavWidget> {

@@ -16,7 +16,7 @@ class EditProfilePhotoWidget extends StatefulWidget {
   const EditProfilePhotoWidget({super.key});
 
   @override
-  _EditProfilePhotoWidgetState createState() => _EditProfilePhotoWidgetState();
+  State<EditProfilePhotoWidget> createState() => _EditProfilePhotoWidgetState();
 }
 
 class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
@@ -308,9 +308,7 @@ class _EditProfilePhotoWidgetState extends State<EditProfilePhotoWidget> {
                                       fontSize: 16.0,
                                       fontWeight: FontWeight.normal,
                                       useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily),
+                                          .containsKey('Lexend Deca'),
                                     ),
                                 elevation: 2.0,
                                 borderSide: const BorderSide(

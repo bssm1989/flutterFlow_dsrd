@@ -18,7 +18,7 @@ class UserEditDetailWidget extends StatefulWidget {
   const UserEditDetailWidget({super.key});
 
   @override
-  _UserEditDetailWidgetState createState() => _UserEditDetailWidgetState();
+  State<UserEditDetailWidget> createState() => _UserEditDetailWidgetState();
 }
 
 class _UserEditDetailWidgetState extends State<UserEditDetailWidget>

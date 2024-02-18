@@ -11,7 +11,7 @@ class CreateCommentWidget extends StatefulWidget {
   const CreateCommentWidget({super.key});
 
   @override
-  _CreateCommentWidgetState createState() => _CreateCommentWidgetState();
+  State<CreateCommentWidget> createState() => _CreateCommentWidgetState();
 }
 
 class _CreateCommentWidgetState extends State<CreateCommentWidget> {

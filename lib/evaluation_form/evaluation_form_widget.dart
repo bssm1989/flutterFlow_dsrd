@@ -2,12 +2,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'evaluation_form_model.dart';
 export 'evaluation_form_model.dart';
@@ -16,7 +14,7 @@ class EvaluationFormWidget extends StatefulWidget {
   const EvaluationFormWidget({super.key});
 
   @override
-  _EvaluationFormWidgetState createState() => _EvaluationFormWidgetState();
+  State<EvaluationFormWidget> createState() => _EvaluationFormWidgetState();
 }
 
 class _EvaluationFormWidgetState extends State<EvaluationFormWidget>
@@ -168,41 +166,6 @@ class _EvaluationFormWidgetState extends State<EvaluationFormWidget>
                               animationsMap['cardOnPageLoadAnimation']!),
                         ),
                       ],
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(0.87, 1.04),
-                    child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
-                      text: FFLocalizations.of(context).getText(
-                        'u3mlty81' /* อัพโหลดรูป */,
-                      ),
-                      options: FFButtonOptions(
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .titleSmall
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleSmallFamily,
-                              color: Colors.white,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleSmallFamily),
-                            ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
                     ),
                   ),
                   const Row(

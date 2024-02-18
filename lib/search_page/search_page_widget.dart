@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'search_page_model.dart';
@@ -16,7 +17,7 @@ class SearchPageWidget extends StatefulWidget {
   const SearchPageWidget({super.key});
 
   @override
-  _SearchPageWidgetState createState() => _SearchPageWidgetState();
+  State<SearchPageWidget> createState() => _SearchPageWidgetState();
 }
 
 class _SearchPageWidgetState extends State<SearchPageWidget> {
@@ -252,10 +253,9 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                             child: SizedBox(
                               width: 50.0,
                               height: 50.0,
-                              child: CircularProgressIndicator(
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  FlutterFlowTheme.of(context).primary,
-                                ),
+                              child: SpinKitChasingDots(
+                                color: FlutterFlowTheme.of(context).tertiary400,
+                                size: 50.0,
                               ),
                             ),
                           );
@@ -314,7 +314,7 @@ class _SearchPageWidgetState extends State<SearchPageWidget> {
                                                       valueOrDefault<String>(
                                                         getJsonField(
                                                           dataItemItem,
-                                                          r'''$.nme''',
+                                                          r'''$.fullname''',
                                                         )?.toString(),
                                                         'ยังไม่มีในฐานข้อมูล',
                                                       ),

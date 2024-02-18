@@ -17,7 +17,7 @@ class EditProfileWidget extends StatefulWidget {
   const EditProfileWidget({super.key});
 
   @override
-  _EditProfileWidgetState createState() => _EditProfileWidgetState();
+  State<EditProfileWidget> createState() => _EditProfileWidgetState();
 }
 
 class _EditProfileWidgetState extends State<EditProfileWidget> {
@@ -171,8 +171,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             color: FlutterFlowTheme.of(context).primary,
                             fontSize: 14.0,
                             fontWeight: FontWeight.normal,
-                            useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                            useGoogleFonts:
+                                GoogleFonts.asMap().containsKey('Lexend Deca'),
                           ),
                       elevation: 1.0,
                       borderSide: const BorderSide(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -68,6 +69,72 @@ class FFAppState extends ChangeNotifier {
               .withoutNulls
               .toList() ??
           _personAdd2;
+    });
+    _safeInit(() {
+      _tambonOfUser = prefs.getString('ff_tambonOfUser') ?? _tambonOfUser;
+    });
+    _safeInit(() {
+      _personPageList = prefs
+              .getStringList('ff_personPageList')
+              ?.map((x) {
+                try {
+                  return PersonStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _personPageList;
+    });
+    _safeInit(() {
+      _tambonDropDown = prefs
+              .getStringList('ff_tambonDropDown')
+              ?.map((x) {
+                try {
+                  return TambonListStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _tambonDropDown;
+    });
+    _safeInit(() {
+      _ampherDropDown = prefs
+              .getStringList('ff_ampherDropDown')
+              ?.map((x) {
+                try {
+                  return AmpherListStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _ampherDropDown;
+    });
+    _safeInit(() {
+      _provinceDropDown = prefs
+              .getStringList('ff_provinceDropDown')
+              ?.map((x) {
+                try {
+                  return ProvinceListStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _provinceDropDown;
+    });
+    _safeInit(() {
+      _xBarLabel = prefs.getStringList('ff_xBarLabel') ?? _xBarLabel;
     });
   }
 
@@ -237,16 +304,249 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList(
         'ff_personAdd2', _personAdd2.map((x) => x.serialize()).toList());
   }
-}
 
-LatLng? _latLngFromString(String? val) {
-  if (val == null) {
-    return null;
+  String _tambonOfUser = '';
+  String get tambonOfUser => _tambonOfUser;
+  set tambonOfUser(String value) {
+    _tambonOfUser = value;
+    prefs.setString('ff_tambonOfUser', value);
   }
-  final split = val.split(',');
-  final lat = double.parse(split.first);
-  final lng = double.parse(split.last);
-  return LatLng(lat, lng);
+
+  List<PersonStruct> _personPageList = [];
+  List<PersonStruct> get personPageList => _personPageList;
+  set personPageList(List<PersonStruct> value) {
+    _personPageList = value;
+    prefs.setStringList(
+        'ff_personPageList', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToPersonPageList(PersonStruct value) {
+    _personPageList.add(value);
+    prefs.setStringList('ff_personPageList',
+        _personPageList.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromPersonPageList(PersonStruct value) {
+    _personPageList.remove(value);
+    prefs.setStringList('ff_personPageList',
+        _personPageList.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromPersonPageList(int index) {
+    _personPageList.removeAt(index);
+    prefs.setStringList('ff_personPageList',
+        _personPageList.map((x) => x.serialize()).toList());
+  }
+
+  void updatePersonPageListAtIndex(
+    int index,
+    PersonStruct Function(PersonStruct) updateFn,
+  ) {
+    _personPageList[index] = updateFn(_personPageList[index]);
+    prefs.setStringList('ff_personPageList',
+        _personPageList.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInPersonPageList(int index, PersonStruct value) {
+    _personPageList.insert(index, value);
+    prefs.setStringList('ff_personPageList',
+        _personPageList.map((x) => x.serialize()).toList());
+  }
+
+  List<TambonListStruct> _tambonDropDown = [
+    TambonListStruct.fromSerializableMap(jsonDecode(
+        '{"tambonid":"Hello World","tambonname":"Hello World","ampherid":"Hello World"}'))
+  ];
+  List<TambonListStruct> get tambonDropDown => _tambonDropDown;
+  set tambonDropDown(List<TambonListStruct> value) {
+    _tambonDropDown = value;
+    prefs.setStringList(
+        'ff_tambonDropDown', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToTambonDropDown(TambonListStruct value) {
+    _tambonDropDown.add(value);
+    prefs.setStringList('ff_tambonDropDown',
+        _tambonDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromTambonDropDown(TambonListStruct value) {
+    _tambonDropDown.remove(value);
+    prefs.setStringList('ff_tambonDropDown',
+        _tambonDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromTambonDropDown(int index) {
+    _tambonDropDown.removeAt(index);
+    prefs.setStringList('ff_tambonDropDown',
+        _tambonDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void updateTambonDropDownAtIndex(
+    int index,
+    TambonListStruct Function(TambonListStruct) updateFn,
+  ) {
+    _tambonDropDown[index] = updateFn(_tambonDropDown[index]);
+    prefs.setStringList('ff_tambonDropDown',
+        _tambonDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInTambonDropDown(int index, TambonListStruct value) {
+    _tambonDropDown.insert(index, value);
+    prefs.setStringList('ff_tambonDropDown',
+        _tambonDropDown.map((x) => x.serialize()).toList());
+  }
+
+  List<AmpherListStruct> _ampherDropDown = [];
+  List<AmpherListStruct> get ampherDropDown => _ampherDropDown;
+  set ampherDropDown(List<AmpherListStruct> value) {
+    _ampherDropDown = value;
+    prefs.setStringList(
+        'ff_ampherDropDown', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToAmpherDropDown(AmpherListStruct value) {
+    _ampherDropDown.add(value);
+    prefs.setStringList('ff_ampherDropDown',
+        _ampherDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromAmpherDropDown(AmpherListStruct value) {
+    _ampherDropDown.remove(value);
+    prefs.setStringList('ff_ampherDropDown',
+        _ampherDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromAmpherDropDown(int index) {
+    _ampherDropDown.removeAt(index);
+    prefs.setStringList('ff_ampherDropDown',
+        _ampherDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void updateAmpherDropDownAtIndex(
+    int index,
+    AmpherListStruct Function(AmpherListStruct) updateFn,
+  ) {
+    _ampherDropDown[index] = updateFn(_ampherDropDown[index]);
+    prefs.setStringList('ff_ampherDropDown',
+        _ampherDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInAmpherDropDown(int index, AmpherListStruct value) {
+    _ampherDropDown.insert(index, value);
+    prefs.setStringList('ff_ampherDropDown',
+        _ampherDropDown.map((x) => x.serialize()).toList());
+  }
+
+  List<ProvinceListStruct> _provinceDropDown = [
+    ProvinceListStruct.fromSerializableMap(jsonDecode(
+        '{"provinceid":"Hello Worldj","provincename":"Hello Worldj"}')),
+    ProvinceListStruct.fromSerializableMap(jsonDecode(
+        '{"provinceid":"Hello World","provincename":"Hello World"}'))
+  ];
+  List<ProvinceListStruct> get provinceDropDown => _provinceDropDown;
+  set provinceDropDown(List<ProvinceListStruct> value) {
+    _provinceDropDown = value;
+    prefs.setStringList(
+        'ff_provinceDropDown', value.map((x) => x.serialize()).toList());
+  }
+
+  void addToProvinceDropDown(ProvinceListStruct value) {
+    _provinceDropDown.add(value);
+    prefs.setStringList('ff_provinceDropDown',
+        _provinceDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromProvinceDropDown(ProvinceListStruct value) {
+    _provinceDropDown.remove(value);
+    prefs.setStringList('ff_provinceDropDown',
+        _provinceDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromProvinceDropDown(int index) {
+    _provinceDropDown.removeAt(index);
+    prefs.setStringList('ff_provinceDropDown',
+        _provinceDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void updateProvinceDropDownAtIndex(
+    int index,
+    ProvinceListStruct Function(ProvinceListStruct) updateFn,
+  ) {
+    _provinceDropDown[index] = updateFn(_provinceDropDown[index]);
+    prefs.setStringList('ff_provinceDropDown',
+        _provinceDropDown.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInProvinceDropDown(int index, ProvinceListStruct value) {
+    _provinceDropDown.insert(index, value);
+    prefs.setStringList('ff_provinceDropDown',
+        _provinceDropDown.map((x) => x.serialize()).toList());
+  }
+
+  List<String> _xBarLabel = ['2019', '2020', '2021', '2023'];
+  List<String> get xBarLabel => _xBarLabel;
+  set xBarLabel(List<String> value) {
+    _xBarLabel = value;
+    prefs.setStringList('ff_xBarLabel', value);
+  }
+
+  void addToXBarLabel(String value) {
+    _xBarLabel.add(value);
+    prefs.setStringList('ff_xBarLabel', _xBarLabel);
+  }
+
+  void removeFromXBarLabel(String value) {
+    _xBarLabel.remove(value);
+    prefs.setStringList('ff_xBarLabel', _xBarLabel);
+  }
+
+  void removeAtIndexFromXBarLabel(int index) {
+    _xBarLabel.removeAt(index);
+    prefs.setStringList('ff_xBarLabel', _xBarLabel);
+  }
+
+  void updateXBarLabelAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    _xBarLabel[index] = updateFn(_xBarLabel[index]);
+    prefs.setStringList('ff_xBarLabel', _xBarLabel);
+  }
+
+  void insertAtIndexInXBarLabel(int index, String value) {
+    _xBarLabel.insert(index, value);
+    prefs.setStringList('ff_xBarLabel', _xBarLabel);
+  }
+
+  List<int> _yBarValue = [24, 32, 14, 15];
+  List<int> get yBarValue => _yBarValue;
+  set yBarValue(List<int> value) {
+    _yBarValue = value;
+  }
+
+  void addToYBarValue(int value) {
+    _yBarValue.add(value);
+  }
+
+  void removeFromYBarValue(int value) {
+    _yBarValue.remove(value);
+  }
+
+  void removeAtIndexFromYBarValue(int index) {
+    _yBarValue.removeAt(index);
+  }
+
+  void updateYBarValueAtIndex(
+    int index,
+    int Function(int) updateFn,
+  ) {
+    _yBarValue[index] = updateFn(_yBarValue[index]);
+  }
+
+  void insertAtIndexInYBarValue(int index, int value) {
+    _yBarValue.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

@@ -17,7 +17,7 @@ class MyTeamWidget extends StatefulWidget {
   const MyTeamWidget({super.key});
 
   @override
-  _MyTeamWidgetState createState() => _MyTeamWidgetState();
+  State<MyTeamWidget> createState() => _MyTeamWidgetState();
 }
 
 class _MyTeamWidgetState extends State<MyTeamWidget>
@@ -275,12 +275,10 @@ class _MyTeamWidgetState extends State<MyTeamWidget>
                                                       fontSize: 14.0,
                                                       fontWeight:
                                                           FontWeight.normal,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily),
+                                                      useGoogleFonts:
+                                                          GoogleFonts.asMap()
+                                                              .containsKey(
+                                                                  'Lexend Deca'),
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(

@@ -15,7 +15,7 @@ class ProjectDetailsWidget extends StatefulWidget {
   const ProjectDetailsWidget({super.key});
 
   @override
-  _ProjectDetailsWidgetState createState() => _ProjectDetailsWidgetState();
+  State<ProjectDetailsWidget> createState() => _ProjectDetailsWidgetState();
 }
 
 class _ProjectDetailsWidgetState extends State<ProjectDetailsWidget>

@@ -81,11 +81,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? const NavBarPage() : const LoginWidget(),
           routes: [
             FFRoute(
-              name: 'Login',
-              path: 'login',
-              builder: (context, params) => const LoginWidget(),
-            ),
-            FFRoute(
               name: 'createAccount',
               path: 'createAccount',
               builder: (context, params) => const CreateAccountWidget(),
@@ -94,6 +89,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'forgotPassword',
               path: 'forgotPassword',
               builder: (context, params) => const ForgotPasswordWidget(),
+            ),
+            FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
               name: 'Home',
@@ -110,13 +110,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MainContractsWidget(),
             ),
             FFRoute(
-              name: 'Main_customerList',
-              path: 'mainCustomerList',
-              builder: (context, params) => params.isEmpty
-                  ? const NavBarPage(initialPage: 'Main_customerList')
-                  : const MainCustomerListWidget(),
-            ),
-            FFRoute(
               name: 'Main_profilePage',
               path: 'mainProfilePage',
               builder: (context, params) => params.isEmpty
@@ -131,6 +124,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : const MyTeamWidget(),
             ),
             FFRoute(
+              name: 'Main_customerList',
+              path: 'mainCustomerList',
+              builder: (context, params) => params.isEmpty
+                  ? const NavBarPage(initialPage: 'Main_customerList')
+                  : const MainCustomerListWidget(),
+            ),
+            FFRoute(
               name: 'editProfile',
               path: 'editProfile',
               builder: (context, params) => const EditProfileWidget(),
@@ -138,7 +138,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'userDetails',
               path: 'userDetails',
-              builder: (context, params) => const UserDetailsWidget(),
+              builder: (context, params) => UserDetailsWidget(
+                perid: params.getParam('perid', ParamType.String),
+              ),
             ),
             FFRoute(
               name: 'projectDetails',
@@ -183,16 +185,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => const EvaluationFormWidget(),
             ),
             FFRoute(
-              name: 'userEditDetail',
-              path: 'userEditDetail',
-              builder: (context, params) => const UserEditDetailWidget(),
-            ),
-            FFRoute(
               name: 'Evaluation-Form2Copy',
               path: 'evaluationForm2Copy',
               builder: (context, params) => EvaluationForm2CopyWidget(
                 personId: params.getParam('personId', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'userEditDetail',
+              path: 'userEditDetail',
+              builder: (context, params) => const UserEditDetailWidget(),
             ),
             FFRoute(
               name: 'Signup',

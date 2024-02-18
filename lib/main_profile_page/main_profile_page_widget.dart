@@ -20,7 +20,7 @@ class MainProfilePageWidget extends StatefulWidget {
   const MainProfilePageWidget({super.key});
 
   @override
-  _MainProfilePageWidgetState createState() => _MainProfilePageWidgetState();
+  State<MainProfilePageWidget> createState() => _MainProfilePageWidgetState();
 }
 
 class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
@@ -339,12 +339,9 @@ class _MainProfilePageWidgetState extends State<MainProfilePageWidget>
                                                         .primary,
                                                 fontSize: 14.0,
                                                 fontWeight: FontWeight.normal,
-                                                useGoogleFonts: GoogleFonts
-                                                        .asMap()
-                                                    .containsKey(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodySmallFamily),
+                                                useGoogleFonts:
+                                                    GoogleFonts.asMap()
+                                                        .containsKey('Outfit'),
                                               ),
                                         ),
                                       ),

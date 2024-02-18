@@ -10,7 +10,7 @@ class OfflinedataWidget extends StatefulWidget {
   const OfflinedataWidget({super.key});
 
   @override
-  _OfflinedataWidgetState createState() => _OfflinedataWidgetState();
+  State<OfflinedataWidget> createState() => _OfflinedataWidgetState();
 }
 
 class _OfflinedataWidgetState extends State<OfflinedataWidget> {

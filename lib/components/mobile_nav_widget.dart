@@ -23,7 +23,7 @@ class MobileNavWidget extends StatefulWidget {
   final Widget? iconFive;
 
   @override
-  _MobileNavWidgetState createState() => _MobileNavWidgetState();
+  State<MobileNavWidget> createState() => _MobileNavWidgetState();
 }
 
 class _MobileNavWidgetState extends State<MobileNavWidget> {

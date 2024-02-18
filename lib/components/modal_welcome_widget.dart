@@ -14,7 +14,7 @@ class ModalWelcomeWidget extends StatefulWidget {
   const ModalWelcomeWidget({super.key});
 
   @override
-  _ModalWelcomeWidgetState createState() => _ModalWelcomeWidgetState();
+  State<ModalWelcomeWidget> createState() => _ModalWelcomeWidgetState();
 }
 
 class _ModalWelcomeWidgetState extends State<ModalWelcomeWidget>

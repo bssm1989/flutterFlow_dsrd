@@ -16,7 +16,7 @@ class MainContractsWidget extends StatefulWidget {
   const MainContractsWidget({super.key});
 
   @override
-  _MainContractsWidgetState createState() => _MainContractsWidgetState();
+  State<MainContractsWidget> createState() => _MainContractsWidgetState();
 }
 
 class _MainContractsWidgetState extends State<MainContractsWidget>
@@ -535,12 +535,11 @@ class _MainContractsWidgetState extends State<MainContractsWidget>
                                                             fontSize: 18.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMediumFamily),
+                                                            useGoogleFonts:
+                                                                GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        'Outfit'),
                                                           ),
                                                     ),
                                                   ],
@@ -743,12 +742,11 @@ class _MainContractsWidgetState extends State<MainContractsWidget>
                                                             fontSize: 18.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            useGoogleFonts: GoogleFonts
-                                                                    .asMap()
-                                                                .containsKey(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleMediumFamily),
+                                                            useGoogleFonts:
+                                                                GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        'Outfit'),
                                                           ),
                                                     ),
                                                   ],

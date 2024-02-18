@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'signup_model.dart';
@@ -17,7 +18,7 @@ class SignupWidget extends StatefulWidget {
   const SignupWidget({super.key});
 
   @override
-  _SignupWidgetState createState() => _SignupWidgetState();
+  State<SignupWidget> createState() => _SignupWidgetState();
 }
 
 class _SignupWidgetState extends State<SignupWidget>
@@ -859,14 +860,11 @@ class _SignupWidgetState extends State<SignupWidget>
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                  ),
+                                                child: SpinKitChasingDots(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary400,
+                                                  size: 50.0,
                                                 ),
                                               ),
                                             );
@@ -1030,21 +1028,18 @@ class _SignupWidgetState extends State<SignupWidget>
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: Colors.white,
-                                                    fontSize: 18.0,
-                                                    fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: GoogleFonts
-                                                            .asMap()
-                                                        .containsKey(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMediumFamily),
-                                                  ),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts:
+                                                    GoogleFonts.asMap()
+                                                        .containsKey('Outfit'),
+                                              ),
                                           elevation: 2.0,
                                           borderSide: const BorderSide(
                                             color: Colors.transparent,

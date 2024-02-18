@@ -23,7 +23,7 @@ class EvaluationForm2CopyWidget extends StatefulWidget {
   final String? personId;
 
   @override
-  _EvaluationForm2CopyWidgetState createState() =>
+  State<EvaluationForm2CopyWidget> createState() =>
       _EvaluationForm2CopyWidgetState();
 }
 
@@ -34,46 +34,6 @@ class _EvaluationForm2CopyWidgetState extends State<EvaluationForm2CopyWidget>
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
-    'imageOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, -140.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'cardOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 400.ms),
-        FadeEffect(
-          curve: Curves.bounceOut,
-          delay: 400.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        ScaleEffect(
-          curve: Curves.bounceOut,
-          delay: 400.ms,
-          duration: 600.ms,
-          begin: const Offset(0.6, 0.6),
-          end: const Offset(1.0, 1.0),
-        ),
-      ],
-    ),
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
@@ -187,88 +147,6 @@ class _EvaluationForm2CopyWidgetState extends State<EvaluationForm2CopyWidget>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 240.0,
-                    child: Stack(
-                      alignment: const AlignmentDirectional(-0.95, -0.7),
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Image.network(
-                            'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
-                            width: 600.0,
-                            height: 240.0,
-                            fit: BoxFit.cover,
-                          ).animateOnPageLoad(
-                              animationsMap['imageOnPageLoadAnimation']!),
-                        ),
-                        Align(
-                          alignment: const AlignmentDirectional(-0.95, -0.55),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              context.pop();
-                            },
-                            child: Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: const Color(0xFFF5F5F5),
-                              elevation: 3.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Icon(
-                                  Icons.arrow_back_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
-                                ),
-                              ),
-                            ),
-                          ).animateOnPageLoad(
-                              animationsMap['cardOnPageLoadAnimation']!),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Align(
-                    alignment: const AlignmentDirectional(0.87, 1.04),
-                    child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
-                      },
-                      text: FFLocalizations.of(context).getText(
-                        '1dt4spo8' /* อัพโหลดรูป */,
-                      ),
-                      options: FFButtonOptions(
-                        height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
-                        textStyle: FlutterFlowTheme.of(context)
-                            .titleSmall
-                            .override(
-                              fontFamily:
-                                  FlutterFlowTheme.of(context).titleSmallFamily,
-                              color: Colors.white,
-                              useGoogleFonts: GoogleFonts.asMap().containsKey(
-                                  FlutterFlowTheme.of(context)
-                                      .titleSmallFamily),
-                            ),
-                        elevation: 3.0,
-                        borderSide: const BorderSide(
-                          color: Colors.transparent,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -296,17 +174,34 @@ class _EvaluationForm2CopyWidgetState extends State<EvaluationForm2CopyWidget>
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 10.0, 10.0, 0.0),
-                                child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    '0jnb6dvt' /* คำชี้แจง: แบบสำรวจนี้มีวัตถุปร... */,
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 10.0, 10.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        '0jnb6dvt' /* คำชี้แจง: แบบสำรวจนี้มีวัตถุปร... */,
+                                      ),
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium,
+                                    ),
                                   ),
-                                  textAlign: TextAlign.start,
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 10.0, 10.0, 0.0),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'vj69v6ad' /* คำชี้แจง: แบบสำรวจนี้มีวัตถุปร... */,
+                                      ),
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

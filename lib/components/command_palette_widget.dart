@@ -15,7 +15,7 @@ class CommandPaletteWidget extends StatefulWidget {
   const CommandPaletteWidget({super.key});
 
   @override
-  _CommandPaletteWidgetState createState() => _CommandPaletteWidgetState();
+  State<CommandPaletteWidget> createState() => _CommandPaletteWidgetState();
 }
 
 class _CommandPaletteWidgetState extends State<CommandPaletteWidget>
